@@ -4,45 +4,59 @@ import { TextField } from "@material-ui/core";
 import logo from '../signup/googleLogo.png';
 
 
-
 export class Signup extends Component {
     render() {
         return (
-            <div class="main-body">
-                <div class="page">
-                    <div class="left-part">
-                        <p class="google">Google</p>
+            <div className="main-body">
+                <div className="page">
+                    <div className="left-part">
+                        <div className="fundoo">
+                            <p style={{ color: 'blue' }} >F</p>
+                            <p style={{ color: 'red' }}>u</p>
+                            <p style={{ color: 'yellow' }}>n</p>
+                            <p style={{ color: 'blue' }}>d</p>
+                            <p style={{ color: 'green' }}>o</p>
+                            <p style={{ color: 'red' }}>o</p>
+                        </div>
                         <br></br>
-                        <p class="account">Create your google account</p>
+                        <p className="account">Create your fundoo account</p>
                         <br></br>
-                        <div class="fl-line">
-                            <TextField id="outlined-basic" label="First Name" variant="outlined" />
-                            <br></br><br></br>
-                            <TextField id="outlined-basic" label="Last Name" variant="outlined" />
+                        <div className="fl-line">
+                            <div className="firstName">
+                                <TextField id="outlined-basic" label="First Name" variant="outlined" />
+                            </div>
+                            <div className="lastName">
+                                <TextField id="outlined-basic" label="Last Name" variant="outlined" />
+                            </div>
                         </div>
                         <br></br>
                         <TextField id="outlined-basic" label="Your email address" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" />
                         <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">Create a new Gmail address instead</a>
                         <br></br>
                         <br></br>
-                        <div class="password">
-                            <TextField id="outlined-basic" label="Password" type="password" variant="outlined" />
-                            <TextField id="outlined-basic" label="Confirm" type="password" variant="outlined" />
+                        <div className="passLine">
+                            <div className="password">
+                                <TextField id="outlined-basic" label="Password" type="password" variant="outlined" />
+                            </div>
+                            <div className="c-password">
+                                <TextField id="outlined-basic" label="Confirm" type="password" variant="outlined" />
+                            </div>
                         </div>
-                        <div class="showpassword">
-                            <input class="check1" type="checkbox"></input>
-                            <p class="showbox">Show Password</p>
+                        <p className="pass-validation">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+                        <div className="showpassword">
+                            <input className="check1" type="checkbox"></input>
+                            <p className="showbox">Show Password</p>
                         </div>
-                        <div class="last-part">
-                            <p class="signin">Sign in Instead</p>
-                            <p class="blue-box">
-                                <button class="button1">Next</button>
+                        <div className="last-part">
+                            <p className="signin">Sign in Instead</p>
+                            <p className="blue-box">
+                                <button className="button1">Next</button>
                             </p>
                         </div>
                     </div>
-                    <div class="right-part">
-                        <img class="logo1" src={logo} alt="this is logo"></img>
-                        < p class="logo-text">One account. All of Google working for you.</p>
+                    <div className="right-part">
+                        <img className="logo1" src={logo} alt="this is logo"></img>
+                        < p className="logo-text">One account. All of Google working for you.</p>
                     </div>
                 </div>
             </div>
