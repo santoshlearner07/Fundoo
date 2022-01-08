@@ -9,7 +9,6 @@
     height: 600px;
     padding: 25px;
     display: flex;
-    /* background-color: lightgrey; */
     border: 1px solid black;
     justify-content: center;
 }
@@ -25,30 +24,50 @@
     justify-content: center;
 }
 
-.google{
+.fundoo{
+    display: flex;
     font-size: 25px;
-    color: blue;
-    margin: 0vh 0vw 0vh -18vw;
+    margin: 0vh 0vw 0vh 0vw; 
 }
 
 .account{
-    font-size: 15px;
+    font-size: 20px;
     font-weight:500;
     color: black;
-    margin: 0vh 0vw 0vh -10vw;
+    margin: -5vh 0vw 0vh -7vw;
 }
 
 .fl-line{
     display: flex;
-    /* float: left; */
     width: 100%;
-    /* justify-content: center; */
+    justify-content: space-evenly;
+}
+
+.firstName{
+    width: 48%;
+}
+
+.lastName{
+    width: 48%;
+}
+
+.passLine{
+    display: flex;
+    width: 100%;
+    justify-content:space-evenly;
 }
 
 .password{
-    /* display: flexbox; */
-    display: flex;
-    justify-content: center;
+    width: 48%;
+}
+
+.c-password{
+    width: 48%;
+}
+
+.pass-validation{
+    font-size: 12px;
+    font-weight:normal ;
 }
 
 .check1{
@@ -87,9 +106,9 @@
 }
 
 .logo1{
-    width: 65%;
+    width: 85%;
     height: 50%;
-    margin: 10vh 6vw;
+    margin: 10vh 4vw;
 }
 
 .logo-text{
@@ -97,7 +116,3 @@
     font-style: italic;
     margin: -10vh 0vw 0vh 5vw;
 }
-
-/* @media screen {
-    
-} */
