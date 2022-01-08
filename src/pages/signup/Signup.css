@@ -10,6 +10,7 @@
     padding: 25px;
     display: flex;
     /* background-color: lightgrey; */
+    border: 1px solid black;
     justify-content: center;
 }
 
@@ -39,7 +40,9 @@
 
 .fl-line{
     display: flex;
-    justify-content: center;
+    /* float: left; */
+    width: 100%;
+    /* justify-content: center; */
 }
 
 .password{
@@ -94,3 +97,7 @@
     font-style: italic;
     margin: -10vh 0vw 0vh 5vw;
 }
+
+/* @media screen {
+    
+} */

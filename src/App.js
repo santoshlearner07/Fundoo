@@ -1,20 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-// import Header from './components/header/Header';
-// import Footer from './components/footer/Footer';
-// import Middle from './components/MidSection/Middle';
-// import Home from './components/MidSection/Home';
-import Signup from './pages/signup/Signup';
+// import Signup from './pages/signup/Signup';
+import Signin from './pages/signin/Signin';
 
 
 function App() {
   return (
     <div className="App">
-      <Signup />
-      {/* <Header />
-      <Middle />
-      <Footer />
-     <Home /> */}
+      {/* <Signup /> */}
+      <Signin />
     </div>
   );
 }

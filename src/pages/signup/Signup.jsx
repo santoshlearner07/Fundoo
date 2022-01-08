@@ -21,12 +21,12 @@ export class Signup extends Component {
                             <TextField id="outlined-basic" label="Last Name" variant="outlined" />
                         </div>
                         <br></br>
-                        <TextField id="outlined-basic" label="Gmail" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" />
+                        <TextField id="outlined-basic" label="Your email address" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" />
                         <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">Create a new Gmail address instead</a>
                         <br></br>
                         <br></br>
                         <div class="password">
-                            <TextField id="outlined-basic" label="Password" type="password" variant="outlined" helperText="Use 8 or more characters with a mix of letters, numbers & symbols" />
+                            <TextField id="outlined-basic" label="Password" type="password" variant="outlined" />
                             <TextField id="outlined-basic" label="Confirm" type="password" variant="outlined" />
                         </div>
                         <div class="showpassword">
