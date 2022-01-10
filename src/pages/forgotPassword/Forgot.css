@@ -1,0 +1,51 @@
+.forgot-main-page{
+    width: 100%;
+    height: 100%;
+    margin: 15vh 0vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot-page{
+    width: 30%;
+    height: 65vh;
+    padding: 2vh 0vw;
+    border: 1px solid rgb(211, 206, 206);
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.first-part{
+    align-items: center;
+    justify-content: center;
+}
+
+.fundoo{
+    display: flex;
+    margin: 0vh 0vw -5vh 12vw;
+}
+
+.find-email{
+    font-size: 25px;
+}
+
+.phoneNumber{
+    font-size: 15px;
+    margin: 2vh 0vw 3vh 0vw;
+    font-weight: 450;
+}
+
+.enter-num-email{
+    width: 85%;
+    justify-content: center;
+    margin: 2vh 0vw 3vh 2.0vw;
+}
+
+.next-button{
+    background-color: rgb(44, 44, 196);
+    border-radius: 7px;
+    font-size: 20px;
+    margin: 3vh 0vw 0vh 20vw;
+    color: white;
+}

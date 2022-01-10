@@ -9,7 +9,10 @@
     height: 600px;
     padding: 25px;
     display: flex;
-    border: 1px solid black;
+    border: 0.1px solid rgb(231, 224, 224);
+    border-radius: 7px;
+   border: 1px solid black;
+
     justify-content: center;
 }
 

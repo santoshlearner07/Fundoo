@@ -1,0 +1,35 @@
+.reset-main-page{
+    width: 100%;
+    height: 100%;
+    margin: 15vh 0vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-page{
+    width: 30%;
+    height: 65vh;
+    border: 1px solid rgb(207, 203, 203);
+    border-radius: 8px;
+    justify-content: center;    
+    align-items: center;
+}
+
+.enter-password{
+    font-size: 20px;
+    margin: -1.5vh 0vw 3vh 0vw;
+}
+
+.password{
+    width: 84%;
+    justify-content: center;
+    align-items: center;
+    margin: 0vh 2.5vw;
+}
+
+.confirm-password{
+    width: 84%;
+    justify-content: center;
+    margin: 2vh 2.5vw;
+}

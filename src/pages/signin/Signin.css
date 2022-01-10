@@ -10,7 +10,8 @@
     padding: 1.5vh;
     width: 25%;
     height: 65vh;
-    border: 1px solid black;
+    border: 0.1px solid rgb(231, 224, 224);
+    border-radius: 7px;
     background-color: white;
 }
 
@@ -37,6 +38,12 @@
 .email{
     font-size: 0px;
     padding: 0px ;
+}
+
+.password{
+    font-size: 0px;
+    padding: 0px;
+    width: 100%;
 }
 
 .else-computer{
