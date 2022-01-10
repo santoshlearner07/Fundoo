@@ -1,0 +1,47 @@
+$border : 1px solid rgb(207, 203, 203);
+$entPassMargin : -1.5vh 0vw 3vh 0vw;
+
+@mixin basicCenter {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin widthHeight {
+    height: 100%;
+    width: 100%;
+}
+
+.reset-main-page{
+    @include widthHeight();
+    margin: 15vh 0vw;
+    display: flex;
+    @include basicCenter();
+}
+
+
+.reset-page{
+    @include basicCenter();
+    border: $border;
+    width: 30%;
+    height: 65vh;
+    border-radius: 8px;
+}
+
+.enter-password{
+    font-size: 20px;
+    margin: $entPassMargin;
+}
+
+.password{
+    @include basicCenter();
+    width: 84%;
+    margin: 0vh 2.5vw;
+}
+
+.confirm-password{
+    @include basicCenter();
+    width: 84%;
+    margin: 2vh 2.5vw;
+}
+
+

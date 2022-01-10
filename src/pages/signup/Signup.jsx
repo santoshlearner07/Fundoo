@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../signup/Signup.css'
+import '../signup/Signup.scss'
 import { TextField } from "@material-ui/core";
 import logo from '../signup/googleLogo.png';
 
@@ -31,17 +31,28 @@ export class Signup extends Component {
                         </div>
                         <br></br>
                         <TextField id="outlined-basic" label="Your fundoo address" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" />
-                        <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">Create a new Fundoo address instead</a>
+                        <a className="google-account" href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">Create a new Fundoo address instead</a>
                         <br></br>
                         <br></br>
-                        <div className="passLine">
+
+                        {/* <div className="passLine">
                             <div className="password">
                                 <TextField id="outlined-basic" label="Password" type="password" variant="outlined" />
                             </div>
                             <div className="c-password">
                                 <TextField id="outlined-basic" label="Confirm" type="password" variant="outlined" />
                             </div>
+                        </div> */}
+
+                        <div className="third-box">
+                            <div className="first-box">
+                            <TextField id="outlined-basic" label="Password" type="password" variant="outlined" />
+                            </div>
+                            <div className="second-box">
+                            <TextField id="outlined-basic" label="Confirm" type="password" variant="outlined" />
+                            </div>
                         </div>
+
                         <p className="pass-validation">Use 8 or more characters with a mix of letters, numbers & symbols</p>
                         <div className="showpassword">
                             <input className="check1" type="checkbox"></input>

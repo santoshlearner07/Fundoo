@@ -1,22 +1,33 @@
+$border :0.1px solid rgb(231, 224, 224); 
+$learncolor : blue;
+
+@mixin basicZero {
+    font-size: 0px;
+    padding: 0px ;
+}
+
+@mixin basicContent {
+    align-items: center;
+    justify-content: center;
+}
+
 .login-main-page{
     width: 100%;
     margin: 15vh 0vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    @include basicContent();
 }
 
 .login-content{
     padding: 1.5vh;
     width: 25%;
     height: 65vh;
-    border: 0.1px solid rgb(231, 224, 224);
+    border: $border;
     border-radius: 7px;
-    background-color: white;
 }
 
 .first-content{
-    justify-content: center;
+    @include basicContent();
 }
 
 .Fundoo{
@@ -30,20 +41,20 @@
 }
 
 .account{
-    /* background-color: black; */
     font-size: 20px;
     margin: -1vh 0vw 3vh 0vw;
 }
 
 .email{
-    font-size: 0px;
-    padding: 0px ;
+    @include basicZero();
+}
+
+.Password{
+    width: 100%;
 }
 
 .password{
-    font-size: 0px;
-    padding: 0px;
-    width: 100%;
+    @include basicZero();
 }
 
 .else-computer{
@@ -54,7 +65,7 @@
 }
 
 .learnmore{
-    color: blue;
+    color: $learncolor;
 }
 
 .create{
@@ -63,19 +74,17 @@
 }
 
 .c-text{
-    color: blue;
-    /* align-items: center; */
-    /* justify-content: center; */
+    color: $learncolor;
+    @include basicContent();
     font-size: 15px;
 }
 
 
 .c-next{
+    background-color: $learncolor;
+    @include basicContent();
     color: whitesmoke;
-    /* align-items: center; */
-    /* justify-content: center; */
     margin: 0vh 0vw;
-    background-color: blue;
 }
 
 .box{

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../reset/Reset.css'
+import '../reset/Reset.scss'
 import { TextField } from "@material-ui/core";
 
 export class Reset extends Component {
@@ -23,7 +23,7 @@ export class Reset extends Component {
                         <TextField id="outlined-basic" label="Password" variant="outlined" fullWidth />
                     </div>
                     <div className="confirm-password">
-                        <TextField id="outlined-basic" label="Confirm Password" variant="outlined" fullWidth />
+                        <TextField id="outlined-basic" label="Confirm Password" type="password" variant="outlined" fullWidth />
                     </div>
                     <button className="next-button">Next</button>
                 </div>

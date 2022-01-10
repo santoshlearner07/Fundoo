@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../forgotPassword/Forgot.css'
+import '../forgotPassword/Forgot.scss'
 import { TextField } from "@material-ui/core";
 
 export class Forgot extends Component {

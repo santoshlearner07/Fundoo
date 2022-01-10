@@ -1,0 +1,161 @@
+$border : 0.1px solid rgb(231, 224, 224);
+$color : rgb(0, 89, 255);
+
+@mixin widthJustify {
+    width: 48%;
+    justify-content: center;
+}
+
+.page{
+    .left-part{
+        @include widthJustify();
+        .fl-line{
+            display: flex;
+            width: 100%;
+            justify-content: space-evenly;
+                .firstName{
+                    @include widthJustify();
+                }
+                .lastName{
+                    @include widthJustify();
+                }
+        }
+        .third-box{
+            display: flex;
+            justify-content: space-evenly;
+            .first-box{
+                @include widthJustify();
+            }
+            .second-box{
+              @include widthJustify();
+            }    
+        }
+    }
+    .right-part{
+        @include widthJustify();
+    }
+}
+
+.main-body{
+    margin: auto;
+    padding: 50px;
+    width: 50%;
+}
+
+.page{
+    border: $border;
+    width: 750px;
+    height: 600px;
+    padding: 25px;
+    display: flex;
+    border-radius: 7px;
+    justify-content: center;
+}
+
+.fundoo{
+    display: flex;
+    font-size: 25px;
+}
+
+.account{
+    font-size: 20px;
+    font-weight:500;
+    color: black;
+    margin: -5vh 0vw 0vh -7vw;
+}
+
+.google-account{
+    margin: 0vh 0vw 0vh -2vw;
+}
+
+.third-box{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pass-validation{
+    font-size: 12px;
+    font-weight:normal ;
+}
+
+.check1{
+    margin: 2.5vh 1vw;
+}
+
+.showpassword{
+    display: flex;
+}
+
+.showbox{
+    font-size: 15px;
+}
+
+.signin{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    color: $color;
+    margin: 2.5vh 10vw 0vh 0vw;
+}
+
+.blue-box{
+    width: 10px;
+    height: 2px;
+}
+
+.button1{
+    font-size: 20px;
+    color: whitesmoke;
+    background-color: $color;
+}
+
+.last-part{
+    display: flex;
+    justify-content: center;
+}
+
+.logo1{
+    width: 85%;
+    height: 50%;
+    margin: 10vh 4vw;
+}
+
+.logo-text{
+    font: 50px;
+    font-style: italic;
+    margin: -10vh 0vw 0vh 5vw;
+}
+
+
+// .left-part{
+//     @include widthJustify();
+// }
+
+// .right-part{
+//     @include widthJustify();
+// }
+
+// .first-box{
+//     width: 48%;
+//     justify-content: center;
+// }
+
+// .second-box{
+//     width: 48%;
+//     justify-content: center;
+// }
+
+// .fl-line{
+//     display: flex;
+//     width: 100%;
+//     justify-content: space-evenly;
+// }
+
+// .firstName{
+//     width: 48%;
+//     justify-content: center;
+// }
+
+// .lastName{
+//     width: 48%;
+//     justify-self: center;
+// }
