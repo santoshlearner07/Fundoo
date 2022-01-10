@@ -9,10 +9,14 @@ import Reset from './pages/reset/Reset';
 function App() {
   return (
     <div className="App">
+
       {/* <Signup /> */}
       {/* <Signin /> */}
       {/* <Forgot /> */}
       <Reset />
+
+      <Signup />
+      <Signin />
     </div>
   );
 }

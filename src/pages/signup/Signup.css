@@ -11,6 +11,8 @@
     display: flex;
     border: 0.1px solid rgb(231, 224, 224);
     border-radius: 7px;
+   border: 1px solid black;
+
     justify-content: center;
 }
 
