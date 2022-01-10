@@ -20,11 +20,11 @@ export class Signin extends Component {
                         < p className="account">Use your Fundoo Account</p>
                     </div>
                     <div className="email">
-                        <TextField id="outlined-basic" label="Email or phone" variant="outlined" helperText="Forgot Email?" fullWidth />
+                        <TextField id="outlined-basic" label="Email or phone" variant="outlined" helperText="Forgot Email?" fullWidth/>
                     </div>
                     <br></br>
                     <div className="password">
-                        <TextField id="outlined-basic" label="Password" variant="outlined" helperText="Forgot Password" fullWidth />
+                        <TextField id="outlined-basic" label="Password" variant="outlined" helperText="Forgot Password" fullWidth/>
 
                     </div>
                     <div className="else-computer">

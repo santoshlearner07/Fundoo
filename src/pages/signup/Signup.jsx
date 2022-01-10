@@ -30,8 +30,8 @@ export class Signup extends Component {
                             </div>
                         </div>
                         <br></br>
-                        <TextField id="outlined-basic" label="Your email address" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" />
-                        <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">Create a new Gmail address instead</a>
+                        <TextField id="outlined-basic" label="Your fundoo address" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods" />
+                        <a href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">Create a new Fundoo address instead</a>
                         <br></br>
                         <br></br>
                         <div className="passLine">
