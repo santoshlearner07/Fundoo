@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import '../reset/Reset.scss'
 import { TextField, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 export class Reset extends Component {
 
@@ -54,7 +55,7 @@ export class Reset extends Component {
             <div className="reset-main-page">
                 <div className="reset-page">
                     <div className="first-part">
-                        <div className="fundoo">
+                        <div className="fundooR">
                             <p style={{ color: 'blue' }} >F</p>
                             <p style={{ color: 'red' }}>u</p>
                             <p style={{ color: 'yellow' }}>n</p>
@@ -62,8 +63,8 @@ export class Reset extends Component {
                             <p style={{ color: 'green' }}>o</p>
                             <p style={{ color: 'red' }}>o</p>
                         </div>
-                        < p className="find-email">Find your email</p>
-                        <p className="enter-password">Enter password</p>
+                        < p className="find-Remail">Find your email</p>
+                        <p className="enter-Rpassword">Enter password</p>
                     </div>
                     <div className="password">
                         <TextField name="resetPassword" id="outlined-basic" label="Password" variant="outlined" fullWidth

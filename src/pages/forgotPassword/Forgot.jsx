@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import '../forgotPassword/Forgot.scss'
 import { TextField, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 export class Forgot extends Component {
 
@@ -48,8 +49,8 @@ export class Forgot extends Component {
         return (
             <div className="forgot-main-page">
                 <div className="forgot-page">
-                    <div className="first-part">
-                        <div className="fundoo">
+                    <div className="first-part-forgot">
+                        <div className="fundooF">
                             <p style={{ color: 'blue' }} >F</p>
                             <p style={{ color: 'red' }}>u</p>
                             <p style={{ color: 'yellow' }}>n</p>
@@ -57,8 +58,8 @@ export class Forgot extends Component {
                             <p style={{ color: 'green' }}>o</p>
                             <p style={{ color: 'red' }}>o</p>
                         </div>
-                        < p className="find-email">Find your email</p>
-                        <p className="phoneNumber">Enter your phone phone or recovery email</p>
+                        < p className="find-Femail">Find your email</p>
+                        <p className="phoneNumberF">Enter your phone phone or recovery email</p>
                     </div>
                     <div className="enter-num-email">
                         <TextField name="numEmail" id="outlined-basic" label="Phone number or email" variant="outlined" fullWidth
@@ -68,9 +69,9 @@ export class Forgot extends Component {
                         />
                     </div>
                     <div className="nextButton">
-                        <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                    <Link to="/reset"> <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                             Next
-                        </Button>
+                        </Button></Link>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import '../signin/Signin.scss'
 import { TextField,Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 export class Signin extends Component {
 
@@ -58,8 +59,8 @@ export class Signin extends Component {
                             <p style={{ color: 'green' }}>o</p>
                             <p style={{ color: 'red' }}>o</p>
                         </div>
-                        <p className="sign-in">Sign in</p>
-                        < p className="account">Use your Fundoo Account</p>
+                        <p className="sign-inS">Sign in</p>
+                        < p className="accountS">Use your Fundoo Account</p>
                     </div>
                     <div className="email">
                         <TextField name="emailCheck" id="outlined-basic" label="Email or phone" variant="outlined" helperText="Forgot Email?" fullWidth 
@@ -83,7 +84,7 @@ export class Signin extends Component {
                         <p className="learnmore">Learn more</p>
                     </div>
                     <div className="create">
-                        <p className="c-text" >Create account ?</p>
+                    <Link to="/"> <p className="c-text" >Create account ?</p> </Link>
                         <div className="box">
                         <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                                 Next

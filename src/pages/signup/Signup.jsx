@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import '../signup/Signup.scss'
 import { TextField, Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 import logo from '../signup/googleLogo.png';
 
 
@@ -91,7 +92,6 @@ export class Signup extends Component {
                                 />
                             </div>
                         </div>
-                        <br></br>
                         <TextField name="address" id="outlined-basic" label="Your fundoo address" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods"
                             error={this.state.addressError}
                             helperText={this.state.addressError ? "Fundoo address required" : " "}
@@ -123,7 +123,7 @@ export class Signup extends Component {
                             <p className="showbox">Show Password</p>
                         </div>
                         <div className="last-part">
-                            <p className="signin">Sign in Instead</p>
+                           <Link to="/signin"> <p className="signin">Sign in Instead</p> </Link>
                             {/* <p className="blue-box">
                                 <button className="button1" onClick={this.next}>Next</button>
                             </p> */}

@@ -11,6 +11,22 @@ $entPassMargin : -1.5vh 0vw 3vh 0vw;
     width: 100%;
 }
 
+.fundooR{
+    display: flex;
+    font-size: 25px;
+    margin: 0vh 0vw 0vh 12vw;
+}
+
+.find-Remail{
+    font-size: 20px;
+    margin: 0vh 0vw 0vh 10vw;
+}
+
+.enter-Rpassword{
+    font-size: 18px;
+    margin: 3vh 0vw 2vh 10vw;
+}
+
 .reset-main-page{
     @include widthHeight();
     margin: 15vh 0vw;
