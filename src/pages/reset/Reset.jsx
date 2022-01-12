@@ -1,9 +1,55 @@
 import React, { Component } from "react";
 import '../reset/Reset.scss'
-import { TextField } from "@material-ui/core";
+import { TextField, Button } from "@material-ui/core";
 
 export class Reset extends Component {
+
+    constructor(props) {
+        super(props)
+
+
+        this.state = {
+            resetPassword: '',
+            confirmResetPassword: '',
+            resetPasswordErr: false,
+            confirmResetPasswordErr: false,
+        }
+    }
+
+    checkData = (e) => {
+        console.log(e.target.value)
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+
+    validation = () => {
+        let isError = false;
+        const error = this.state;
+        error.resetPasswordErr = this.state.resetPassword === '' ? true : false;
+        error.confirmResetPasswordErr = this.state.confirmResetPassword === '' ? true : false;
+
+
+        this.setState({
+            ...error
+        })
+        return isError = error.resetPasswordErr || error.confirmResetPasswordErr;
+    }
+
+
+
+
+    next = () => {
+        var validated = this.validation();
+        if (validated) {
+            console.log("Success")
+        }
+    }
+
+
     render() {
+        console.log(this.state)
         return (
             <div className="reset-main-page">
                 <div className="reset-page">
@@ -20,12 +66,24 @@ export class Reset extends Component {
                         <p className="enter-password">Enter password</p>
                     </div>
                     <div className="password">
-                        <TextField id="outlined-basic" label="Password" variant="outlined" fullWidth />
+                        <TextField name="resetPassword" id="outlined-basic" label="Password" variant="outlined" fullWidth
+                            error={this.state.resetPasswordErr}
+                            helperText={this.state.resetPasswordErr ? "Password Required" : ""}
+                            onChange={e => this.checkData(e)}
+                        />
                     </div>
                     <div className="confirm-password">
-                        <TextField id="outlined-basic" label="Confirm Password" type="password" variant="outlined" fullWidth />
+                        <TextField name="confirmResetPassword" id="outlined-basic" label="Confirm Password" type="password" variant="outlined" fullWidth
+                            error={this.state.confirmResetPasswordErr}
+                            helperText={this.state.confirmResetPasswordErr ? "Password Required" : ""}
+                            onChange={e => this.checkData(e)}
+                        />
                     </div>
-                    <button className="next-button">Next</button>
+                    <div className="rButton">
+                        <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                            Next
+                        </Button>
+                    </div>
                 </div>
             </div>
         )
