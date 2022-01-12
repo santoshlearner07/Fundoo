@@ -68,14 +68,14 @@ export class Reset extends Component {
                     <div className="password">
                         <TextField name="resetPassword" id="outlined-basic" label="Password" variant="outlined" fullWidth
                             error={this.state.resetPasswordErr}
-                            helperText={this.state.resetPasswordErr ? "Password Required" : ""}
+                            helperText={this.state.resetPasswordErr ? "Password Required" : " "}
                             onChange={e => this.checkData(e)}
                         />
                     </div>
                     <div className="confirm-password">
                         <TextField name="confirmResetPassword" id="outlined-basic" label="Confirm Password" type="password" variant="outlined" fullWidth
                             error={this.state.confirmResetPasswordErr}
-                            helperText={this.state.confirmResetPasswordErr ? "Password Required" : ""}
+                            helperText={this.state.confirmResetPasswordErr ? "Password Required" : " "}
                             onChange={e => this.checkData(e)}
                         />
                     </div>

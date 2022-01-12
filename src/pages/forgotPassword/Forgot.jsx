@@ -63,7 +63,7 @@ export class Forgot extends Component {
                     <div className="enter-num-email">
                         <TextField name="numEmail" id="outlined-basic" label="Phone number or email" variant="outlined" fullWidth
                             error={this.state.numEmailError}
-                            helperText={this.state.numEmailError ? "Number or Email required" : ""}
+                            helperText={this.state.numEmailError ? "Number or Email required" : " "}
                             onChange={e => this.changeHandle(e)}
                         />
                     </div>
