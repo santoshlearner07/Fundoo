@@ -3,6 +3,8 @@ import '../signup/Signup.scss'
 import { TextField, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import logo from '../signup/googleLogo.png';
+import axios from "axios";
+
 
 
 export class Signup extends Component {
@@ -21,7 +23,6 @@ export class Signup extends Component {
             firstPasswordError: false,
             confirmPasswordError: false
         }
-
     }
 
     changeHandle = (e) => {
@@ -39,7 +40,6 @@ export class Signup extends Component {
         error.addressError = this.state.address === '' ? true : false;
         error.firstPasswordError = this.state.firstPassword === '' ? true : false;
         error.confirmPasswordError = this.state.confirmPassword === '' ? true : false;
-
 
         this.setState({
             ...error
@@ -123,7 +123,7 @@ export class Signup extends Component {
                             <p className="showbox">Show Password</p>
                         </div>
                         <div className="last-part">
-                           <Link to="/signin"> <p className="signin">Sign in Instead</p> </Link>
+                            <Link to="/signin"> <p className="signin">Sign in Instead</p> </Link>
                             {/* <p className="blue-box">
                                 <button className="button1" onClick={this.next}>Next</button>
                             </p> */}
