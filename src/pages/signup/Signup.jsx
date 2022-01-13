@@ -3,7 +3,6 @@ import '../signup/Signup.scss'
 import { TextField } from "@material-ui/core";
 import logo from '../signup/googleLogo.png';
 
-
 export class Signup extends Component {
     render() {
         return (
