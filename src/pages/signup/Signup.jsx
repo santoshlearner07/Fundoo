@@ -2,8 +2,41 @@ import React, { Component } from "react";
 import '../signup/Signup.scss'
 import { TextField } from "@material-ui/core";
 import logo from '../signup/googleLogo.png';
+import axios from "axios";
+import UserService from "../../services/userService";
+
+const uService = new UserService();
+
 
 export class Signup extends Component {
+
+    next = () => {
+        //     var validated = this.validation();
+        //     if (validated) {
+        console.log("Validation Completed")
+        //     } else {
+        //         console.log("somethingmissing")
+        //     }
+        let data = {
+
+            "first_name": "Santosh",
+            "last_name": "Nandiyawar",
+            "address": "san@emial.com",
+            "firstPassword": "sabhb",
+            "confirmPassword": "sabhb",
+            "service":"advance"
+            };
+
+            uService.registration(data)
+            .then(res=>{
+                console.log(res.data)
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+
+    }
+
     render() {
         return (
             <div className="main-body">
@@ -60,7 +93,7 @@ export class Signup extends Component {
                         <div className="last-part">
                             <p className="signin">Sign in Instead</p>
                             <p className="blue-box">
-                                <button className="button1">Next</button>
+                                <button className="button1" onClick={this.next} >Next</button>
                             </p>
                         </div>
                     </div>
