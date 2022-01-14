@@ -29,7 +29,7 @@ export class Signup extends Component {
 
             uService.registration(data)
             .then(res=>{
-                console.log(res.data)
+                console.log(res)
             })
             .catch(err=>{
                 console.log(err)

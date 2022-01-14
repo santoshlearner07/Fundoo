@@ -1,3 +1,4 @@
+import Signup from "../pages/signup/Signup";
 import AxiosService from "./axiosService";
 
 const service= new AxiosService();
@@ -8,14 +9,11 @@ const service= new AxiosService();
 class UserService{
     registration(data){
        return service.postMethod(`http://fundoonotes.incubation.bridgelabz.com/api/user/userSignUp`,data);
-
     }
-    // login(data){
-    //     return service.postMethod(`http://fundoonotes.incubation.bridgelabz.com/api/user/login`,data);
- 
-    //  }
 
-
+    signin(data){
+        return service.postMethod(`http://fundoonotes.incubation.bridgelabz.com/api/user/login`,data);
+     }
 }
 
 
