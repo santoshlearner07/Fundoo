@@ -13,12 +13,14 @@ import Reset from './pages/reset/Reset';
 
 function App() {
   return (
+<<<<<<< HEAD
     <div className="App">
       <Signup />
       {/* <Signin /> */}
       {/* <Forgot /> */}
       {/* <Reset /> */}
     </div>
+=======
     <BrowserRouter>
         <div className="App">
           {/* <Signup /> */}
@@ -34,6 +36,7 @@ function App() {
         <Route path='/reset' component={Reset} />
       </Switch>
     </BrowserRouter>
+>>>>>>> Validation
   );
 }
 
