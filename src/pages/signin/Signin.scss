@@ -36,13 +36,14 @@ $learncolor : blue;
     margin: 0vh 0vw -4vh 10vw; 
 }
 
-.sign-in{
+.sign-inS{
     font-size: 25px;
+    margin: 2.5vh 0vw 2.5vh 10vw;
 }
 
-.account{
+.accountS{
     font-size: 20px;
-    margin: -1vh 0vw 3vh 0vw;
+    margin: 0vh 0vw 3vh 5vw;
 }
 
 .email{
@@ -76,7 +77,7 @@ $learncolor : blue;
 .c-text{
     color: $learncolor;
     @include basicContent();
-    font-size: 15px;
+    font-size: 13.7px;
 }
 
 

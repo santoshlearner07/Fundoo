@@ -27,22 +27,24 @@ $nextbgColor : rgb(44, 44, 196);
     border-radius: 8px;
 }
 
-.first-part{
+.first-part-forgot{
     @include basicContent();
 }
 
-.fundoo{
+.fundooF{
     display: flex;
-    margin: 0vh 0vw -5vh 12vw;
+   font-size: 25px;
+    @include basicContent();
 }
 
-.find-email{
+.find-Femail{
     font-size: 25px;
+    margin: 0vh 0vw 0vh 10vw;
 }
 
-.phoneNumber{
-    font-size: 15px;
-    margin: 2vh 0vw 3vh 0vw;
+.phoneNumberF{
+    font-size: 18px;
+    margin: 2vh 0vw 5vh 6vw;
     font-weight: 450;
 }
 
@@ -52,10 +54,6 @@ $nextbgColor : rgb(44, 44, 196);
     margin: 2vh 0vw 3vh 2.0vw;
 }
 
-.next-button{
-    background-color: $nextbgColor;
-    border-radius: 7px;
-    font-size: 20px;
-    margin: 3vh 0vw 0vh 20vw;
-    color: white;
+.nextButton{
+    margin: 0vh 0vw 0vh 20vw;
 }

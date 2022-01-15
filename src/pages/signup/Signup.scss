@@ -8,7 +8,6 @@ $color : rgb(0, 89, 255);
 
 .page{
     .left-part{
-        @include widthJustify();
         .fl-line{
             display: flex;
             width: 100%;
@@ -36,6 +35,16 @@ $color : rgb(0, 89, 255);
     }
 }
 
+.left-part{
+    width: 48%;
+}
+
+.funWord{
+    display: flex;
+    font-size: 30px;
+    margin: 0vh 0vw 0vh 0.7vw;
+}
+
 .main-body{
     margin: auto;
     padding: 50px;
@@ -52,21 +61,21 @@ $color : rgb(0, 89, 255);
     justify-content: center;
 }
 
-.fundoo{
-    display: flex;
-    font-size: 25px;
-}
-
-.account{
+.c-account{
     font-size: 20px;
-    font-weight:500;
-    color: black;
-    margin: -5vh 0vw 0vh -7vw;
+    margin: -4vh 6vw 2vh 0vw;
 }
 
-.google-account{
-    margin: 0vh 0vw 0vh -2vw;
-}
+// .account{
+//     font-size: 20px;
+//     font-weight:500;
+//     // color: black;
+//     margin: 0vh 0vw 0vh 0vw;
+// }
+
+// .google-account{
+//     margin: 0vh 0vw 0vh 0vw;
+// }
 
 .third-box{
     display: flex;
@@ -114,17 +123,25 @@ $color : rgb(0, 89, 255);
 }
 
 .logo1{
-    width: 85%;
-    height: 50%;
-    margin: 10vh 4vw;
+    width: 63%;
+    height: 35%;
+    margin: 18vh 0vw 10vh 5vw;
 }
 
 .logo-text{
     font: 50px;
-    font-style: italic;
+    font-weight:350;
     margin: -10vh 0vw 0vh 5vw;
 }
 
+.MuiButton-contained {
+    color: white !important;
+}
+
+.bbox{
+    margin: 0vh 0vw 0vh 0vw;
+    color: white;
+}
 
 // .left-part{
 //     @include widthJustify();
