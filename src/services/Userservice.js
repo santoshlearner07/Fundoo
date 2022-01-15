@@ -1,0 +1,20 @@
+import Signup from "../pages/signup/Signup";
+import AxiosService from "./axiosService";
+
+const service= new AxiosService();
+
+let baseUrl = 'http://fundoonotes.incubation.bridgelabz.com/api/';
+
+
+class UserService{
+    registration(data){
+       return service.postMethod(`${baseUrl}user/userSignUp`,data);
+    }
+
+    signin(data){
+        return service.postMethod(`http://fundoonotes.incubation.bridgelabz.com/api/user/login`,data);
+     }
+}
+
+
+export default UserService
