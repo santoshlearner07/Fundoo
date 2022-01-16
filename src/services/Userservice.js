@@ -1,19 +1,27 @@
-import Signup from "../pages/signup/Signup";
-import AxiosService from "./axiosService";
+// import Signup from "../pages/signup/Signup";
+import AxiosService from "./axioService";
 
-const service= new AxiosService();
 
 let baseUrl = 'http://fundoonotes.incubation.bridgelabz.com/api/';
+const service = new AxiosService();
 
+class UserService {
+  registration(data) {
+    return service.postMethod(`${baseUrl}user/userSignUp`, data);
+  }
 
-class UserService{
-    registration(data){
-       return service.postMethod(`${baseUrl}user/userSignUp`,data);
-    }
+  signin(data) {
+    return service.postMethod(`${baseUrl}user/login`, data);
+  }
 
-    signin(data){
-        return service.postMethod(`http://fundoonotes.incubation.bridgelabz.com/api/user/login`,data);
-     }
+  forgot(data) {
+    service.postMethod(`${baseUrl}user/reset`, data)
+  }
+
+  reset(data) {
+    return service.postMethod(`${baseUrl}user/reset-password`, data)
+  }
+
 }
 
 

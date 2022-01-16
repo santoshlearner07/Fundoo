@@ -4,23 +4,24 @@ import { TextField, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import logo from '../signup/googleLogo.png';
 import axios from "axios";
+import UserService from "../../services/userService";
 
-
+const uService = new UserService();
 
 export class Signup extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            first_name: '',
-            last_name: '',
-            address: '',
-            firstPassword: '',
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
             confirmPassword: '',
-            first_nameError: false,
-            last_nameError: false,
-            addressError: false,
-            firstPasswordError: false,
+            firstNameError: false,
+            lastNameError: false,
+            emailError: false,
+            passwordError: false,
             confirmPasswordError: false
         }
     }
@@ -35,17 +36,17 @@ export class Signup extends Component {
     validation = () => {
         let isError = false;
         const error = this.state;
-        error.first_nameError = this.state.first_name === '' ? true : false;
-        error.last_nameError = this.state.last_name === '' ? true : false;
-        error.addressError = this.state.address === '' ? true : false;
-        error.firstPasswordError = this.state.firstPassword === '' ? true : false;
-        error.confirmPasswordError = this.state.confirmPassword === '' ? true : false;
+        error.firstNameError = this.state.firstName === '' ? true : false;
+        error.lastNameError = this.state.lastName === '' ? true : false;
+        error.emailError = this.state.email === '' ? true : false;
+        error.passwordError = this.state.password === '' ? true : false;
+        // error.confirmPasswordError = this.state.confirmPassword === '' ? true : false;
 
         this.setState({
             ...error
         })
 
-        return isError = error.first_nameError || error.last_nameError || error.addressError || error.firstPasswordError || error.confirmPasswordError;
+        return isError = error.firstNameError || error.lastNameError || error.emailError || error.passwordError; // || error.confirmPasswordError
     }
 
 
@@ -53,6 +54,23 @@ export class Signup extends Component {
         var validated = this.validation();
         if (validated) {
             console.log("Validation Completed")
+
+            let data = {
+                "firstName": "Sagarr",
+                "lastName": "Nandiyyawars",
+                "email": "santoshwalkeff719@gmail.com",
+                "password": "santosh@W23",
+                "service": "advance"
+            };
+
+            uService.registration(data)
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+
         } else {
             console.log("somethingmissing")
         }
@@ -78,34 +96,34 @@ export class Signup extends Component {
                         <br></br>
                         <div className="fl-line">
                             <div className="firstName">
-                                <TextField name="first_name" id="outlined-basic" label="First Name" variant="outlined"
-                                    error={this.state.first_nameError}
-                                    helperText={this.state.first_nameError ? "First Name required" : " "}
+                                <TextField name="firstName" id="outlined-basic" label="First Name" variant="outlined"
+                                    error={this.state.firstNameError}
+                                    helperText={this.state.firstNameError ? "First Name required" : " "}
                                     onChange={e => this.changeHandle(e)}
                                 />
                             </div>
                             <div className="lastName">
-                                <TextField name="last_name" id="outlined-basic" label="Last Name" variant="outlined"
-                                    error={this.state.last_nameError}
-                                    helperText={this.state.last_nameError ? "Last Name required" : " "}
+                                <TextField name="lastName" id="outlined-basic" label="Last Name" variant="outlined"
+                                    error={this.state.lastNameError}
+                                    helperText={this.state.lastNameError ? "Last Name required" : " "}
                                     onChange={e => this.changeHandle(e)}
                                 />
                             </div>
                         </div>
-                        <TextField name="address" id="outlined-basic" label="Your fundoo address" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods"
-                            error={this.state.addressError}
-                            helperText={this.state.addressError ? "Fundoo address required" : " "}
+                        <TextField name="email" id="outlined-basic" label="Your fundoo email" variant="outlined" fullWidth helperText="You can use letters,numbers  & periods"
+                            error={this.state.emailError}
+                            helperText={this.state.emailError ? "Fundoo email required" : " "}
                             onChange={e => this.changeHandle(e)}
                         />
-                        <a className="google-account" href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">Create a new Fundoo address instead</a>
+                        <a className="google-account" href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp">Create a new Fundoo email instead</a>
                         <br></br>
                         <br></br>
 
                         <div className="third-box">
                             <div className="first-box">
-                                <TextField name="firstPassword" id="outlined-basic" label="Password" type="password" variant="outlined"
-                                    error={this.state.firstPasswordError}
-                                    helperText={this.state.firstPasswordError ? "Password required" : " "}
+                                <TextField name="password" id="outlined-basic" label="Password" type="password" variant="outlined"
+                                    error={this.state.passwordError}
+                                    helperText={this.state.passwordError ? "Password required" : " "}
                                     onChange={e => this.changeHandle(e)} />
                             </div>
                             <div className="second-box">

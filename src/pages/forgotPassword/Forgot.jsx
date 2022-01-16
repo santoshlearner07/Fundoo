@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import '../forgotPassword/Forgot.scss'
 import { TextField, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import UserService from "../../services/userService";
+
+
+const uService = new UserService();
 
 export class Forgot extends Component {
 
@@ -10,8 +14,8 @@ export class Forgot extends Component {
 
 
         this.state = {
-            numEmail: '',
-            numEmailError: false
+            email: '',
+            emailError: false
         }
     }
     changeHandle = (e) => {
@@ -24,7 +28,7 @@ export class Forgot extends Component {
     validation = () => {
         let isError = false;
         const error = this.state;
-        error.numEmailError = this.state.numEmail === '' ? true : false;
+        error.emailError = this.state.email === '' ? true : false;
 
 
 
@@ -32,7 +36,7 @@ export class Forgot extends Component {
             ...error
         })
 
-        return isError = error.numEmailError;
+        return isError = error.emailError;
     }
 
 
@@ -40,7 +44,21 @@ export class Forgot extends Component {
         var validated = this.validation();
         if (validated) {
             console.log("Validation successfull !!!")
-        }
+
+            let data = {
+                "email": "santoshwalker719@gmail.com",
+            };
+
+            uService.forgot(data)
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+
+
+        } else console.log("Something missing")
     }
 
 
@@ -62,14 +80,14 @@ export class Forgot extends Component {
                         <p className="phoneNumberF">Enter your phone phone or recovery email</p>
                     </div>
                     <div className="enter-num-email">
-                        <TextField name="numEmail" id="outlined-basic" label="Phone number or email" variant="outlined" fullWidth
-                            error={this.state.numEmailError}
-                            helperText={this.state.numEmailError ? "Number or Email required" : " "}
+                        <TextField name="email" id="outlined-basic" label="Phone number or email" variant="outlined" fullWidth
+                            error={this.state.emailError}
+                            helperText={this.state.emailError ? "Number or Email required" : " "}
                             onChange={e => this.changeHandle(e)}
                         />
                     </div>
                     <div className="nextButton">
-                    <Link to="/reset"> <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                        <Link to="/reset"> <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                             Next
                         </Button></Link>
                     </div>

@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import '../reset/Reset.scss'
 import { TextField, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import UserService from "../../services/userService";
+
+const uService = new UserService();
 
 export class Reset extends Component {
 
@@ -10,10 +13,10 @@ export class Reset extends Component {
 
 
         this.state = {
-            resetPassword: '',
-            confirmResetPassword: '',
-            resetPasswordErr: false,
-            confirmResetPasswordErr: false,
+            newPassword: '',
+            confirmnewPassword: '',
+            newPasswordErr: false,
+            confirmnewPasswordErr: false,
         }
     }
 
@@ -28,24 +31,36 @@ export class Reset extends Component {
     validation = () => {
         let isError = false;
         const error = this.state;
-        error.resetPasswordErr = this.state.resetPassword === '' ? true : false;
-        error.confirmResetPasswordErr = this.state.confirmResetPassword === '' ? true : false;
+        error.newPasswordErr = this.state.newPassword === '' ? true : false;
+        error.confirmnewPasswordErr = this.state.confirmnewPassword === '' ? true : false;
 
 
         this.setState({
             ...error
         })
-        return isError = error.resetPasswordErr || error.confirmResetPasswordErr;
+        return isError = error.newPasswordErr || error.confirmnewPasswordErr;
     }
-
-
 
 
     next = () => {
         var validated = this.validation();
         if (validated) {
             console.log("Success")
-        }
+            let data = {
+                "newPassword": "Santosh@jkl",
+                "confirmnewPassword": "Santosh@jkl"
+            };
+
+            uService.reset(data)
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+
+
+        } else console.log("Something mssing");
     }
 
 
@@ -67,16 +82,16 @@ export class Reset extends Component {
                         <p className="enter-Rpassword">Enter password</p>
                     </div>
                     <div className="password">
-                        <TextField name="resetPassword" id="outlined-basic" label="Password" variant="outlined" fullWidth
-                            error={this.state.resetPasswordErr}
-                            helperText={this.state.resetPasswordErr ? "Password Required" : " "}
+                        <TextField name="newPassword" id="outlined-basic" label="Password" variant="outlined" fullWidth
+                            error={this.state.newPasswordErr}
+                            helperText={this.state.newPasswordErr ? "Password Required" : " "}
                             onChange={e => this.checkData(e)}
                         />
                     </div>
                     <div className="confirm-password">
-                        <TextField name="confirmResetPassword" id="outlined-basic" label="Confirm Password" type="password" variant="outlined" fullWidth
-                            error={this.state.confirmResetPasswordErr}
-                            helperText={this.state.confirmResetPasswordErr ? "Password Required" : " "}
+                        <TextField name="confirmnewPassword" id="outlined-basic" label="Confirm Password" type="password" variant="outlined" fullWidth
+                            error={this.state.confirmnewPasswordErr}
+                            helperText={this.state.confirmnewPasswordErr ? "Password Required" : " "}
                             onChange={e => this.checkData(e)}
                         />
                     </div>
