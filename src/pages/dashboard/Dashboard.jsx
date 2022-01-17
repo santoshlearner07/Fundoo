@@ -171,8 +171,6 @@ export default function MiniDrawer() {
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-
-
         </DrawerHeader>
         <Divider />
         <List>
@@ -194,6 +192,11 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+              <div>
+              <TextField id="outlined-basic" label="Take a note" variant="outlined" fullWidth />
+              </div>
+
+
         <Typography paragraph>
 
         </Typography>
