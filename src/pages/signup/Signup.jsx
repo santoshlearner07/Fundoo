@@ -56,19 +56,24 @@ export class Signup extends Component {
             console.log("Validation Completed")
 
             let data = {
-                "firstName": "Sagarr",
-                "lastName": "Nandiyyawars",
-                "email": "santoshwalkeff719@gmail.com",
-                "password": "santosh@W23",
+                "firstName": "Sagarrrr",
+                "lastName": "Nandiyyawrarrs",
+                "email": "santoshwarlrrkeff719@gmail.com",
+                "password": "santosrh@W23",
                 "service": "advance"
+                // "firstName": this.state.firstName,
+                // "lastName": this.state.lastName,
+                // "email": this.state.email,
+                // "password": this.state.password,
+                // "service": "advance"
             };
 
             uService.registration(data)
                 .then(res => {
-                    console.log(res)
+                    // console.log(res)
                 })
                 .catch(err => {
-                    console.log(err)
+                    // console.log(err)
                 })
 
         } else {

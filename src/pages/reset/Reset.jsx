@@ -96,9 +96,9 @@ export class Reset extends Component {
                         />
                     </div>
                     <div className="rButton">
-                        <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                    <Link to="/signin">   <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                             Next
-                        </Button>
+                        </Button></Link>
                     </div>
                 </div>
             </div>

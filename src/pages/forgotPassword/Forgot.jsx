@@ -87,7 +87,7 @@ export class Forgot extends Component {
                         />
                     </div>
                     <div className="nextButton">
-                        <Link to="/reset"> <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                        <Link to="/resetpassword"> <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                             Next
                         </Button></Link>
                     </div>
