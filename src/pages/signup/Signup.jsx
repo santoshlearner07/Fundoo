@@ -40,13 +40,13 @@ export class Signup extends Component {
         error.lastNameError = this.state.lastName === '' ? true : false;
         error.emailError = this.state.email === '' ? true : false;
         error.passwordError = this.state.password === '' ? true : false;
-        // error.confirmPasswordError = this.state.confirmPassword === '' ? true : false;
+        error.confirmPasswordError = this.state.confirmPassword === '' ? true : false;
 
         this.setState({
             ...error
         })
 
-        return isError = error.firstNameError || error.lastNameError || error.emailError || error.passwordError; // || error.confirmPasswordError
+        return isError = error.firstNameError || error.lastNameError || error.emailError || error.passwordError || error.confirmPasswordError; // 
     }
 
 
@@ -56,16 +56,11 @@ export class Signup extends Component {
             console.log("Validation Completed")
 
             let data = {
-                "firstName": "Sagarrrr",
-                "lastName": "Nandiyyawrarrs",
-                "email": "santoshwarlrrkeff719@gmail.com",
-                "password": "santosrh@W23",
+                "firstName": this.state.firstName ,
+                "lastName": this.state.lastName,
+                "email": this.state.email,
+                "password": this.state.password,
                 "service": "advance"
-                // "firstName": this.state.firstName,
-                // "lastName": this.state.lastName,
-                // "email": this.state.email,
-                // "password": this.state.password,
-                // "service": "advance"
             };
 
             uService.registration(data)

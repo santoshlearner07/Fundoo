@@ -47,8 +47,10 @@ export class Reset extends Component {
         if (validated) {
             console.log("Success")
             let data = {
-                "newPassword": "Santosh@jkl",
-                "confirmnewPassword": "Santosh@jkl"
+                // "newPassword": "Santosh@jkl",
+                // "confirmnewPassword": "Santosh@jkl"
+                "newPassword" : this.state.newPassword,
+                "confirmnewPassword" : this.state.confirmnewPassword
             };
 
             uService.reset(data)

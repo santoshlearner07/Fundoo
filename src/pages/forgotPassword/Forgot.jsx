@@ -47,6 +47,7 @@ export class Forgot extends Component {
 
             let data = {
                 "email": "santoshwalker719@gmail.com",
+                // "email" : this.state.email
             };
 
             uService.forgot(data)

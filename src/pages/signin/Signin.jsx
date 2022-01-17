@@ -45,8 +45,11 @@ export class Signin extends Component {
             console.log("Validation Successfulll!!!")
 
             let data = {
-                "email": "santoshwalker719@gmail.com",
-                "password": "santosh@W23"
+                // "email": "santoshwalker719@gmail.com",
+                // "password": "santosh@W23"
+                    "email" : this.state.email,
+                    "password" : this.state.password
+
             };
 
             uService.signin(data)
@@ -103,9 +106,9 @@ export class Signin extends Component {
                     <div className="create">
                         <Link to="/"> <p className="c-text" >Create account ?</p> </Link>
                         <div className="box">
-                            <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                        <Link to="/dashboard">  <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                                 Next
-                            </Button>
+                            </Button></Link>
                         </div>
                     </div>
                 </div>
