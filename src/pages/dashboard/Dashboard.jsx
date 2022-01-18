@@ -194,9 +194,7 @@ export default function MiniDrawer() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
 
-        <TakeANote />
-        <DisplayNote />
-        {/* <Notes /> */}
+        <Notes />
 
         <Typography paragraph>
 
