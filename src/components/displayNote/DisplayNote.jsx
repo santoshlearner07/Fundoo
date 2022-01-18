@@ -10,7 +10,7 @@ import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
 export class DisplayNote extends Component {
     render() {
         return (
-            <div>
+            <div className="mainDisplay">
                 <div className="displayBox">
                     <div>Title</div>
                     <div>Description</div>

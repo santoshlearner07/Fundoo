@@ -55,6 +55,7 @@ export class Signin extends Component {
             uService.signin(data)
                 .then(res => {
                     console.log(res)
+                    localStorage.setItem("token", res.data.id)
                 })
                 .catch(err => {
                     console.log(err)
@@ -98,6 +99,7 @@ export class Signin extends Component {
                             helperText={this.state.passwordError ? "Password required" : " "}
                             onChange={e => this.checkData(e)}
                         />
+                        <Link to="/forgot"> <p className="forgotPassword"> Forgot Password ? </p> </Link>
                     </div>
                     <div className="else-computer">
                         <p className="text">Not your computer? Use Guest mode to sign in privately.</p>
