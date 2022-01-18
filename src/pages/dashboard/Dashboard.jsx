@@ -62,7 +62,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
-  backgroundcolor: '#fff'
+  backgroundcolor: '#fff' //left
 }));
 
 const AppBar = styled(MuiAppBar, {
@@ -72,7 +72,7 @@ const AppBar = styled(MuiAppBar, {
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
-    backgroundcolor: '#fff'
+    backgroundColor: '#fff'
   }),
   ...(open && {
     marginLeft: drawerWidth,
@@ -105,24 +105,24 @@ export default function MiniDrawer() {
   const [open, setOpen] = React.useState(false);
   let iconlist = [
     {
-      icons: LightbulbOutlinedIcon,
-      text: "Notes"
+      icons: <LightbulbOutlinedIcon />,
+      iText: "Notes"
     },
     {
-      icons: NotificationsOutlinedIcon,
-      text: "Reminders"
+      icons: <NotificationsOutlinedIcon />,
+      iText: "Reminders"
     },
     {
-      icons: CreateOutlinedIcon,
-      text: "Edit Labels"
+      icons: <CreateOutlinedIcon />,
+      iText: "Edit Labels"
     },
     {
-      icons: ArchiveOutlinedIcon,
-      text: "Archive"
+      icons: <ArchiveOutlinedIcon />,
+      iText: "Archive"
     },
     {
-      icons: DeleteForeverOutlinedIcon,
-      text: "Bin"
+      icons: <DeleteForeverOutlinedIcon />,
+      iText: "Bin"
     }
   ];
 
@@ -142,8 +142,6 @@ export default function MiniDrawer() {
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-
-
           >
             <MenuIcon />
           </IconButton>
@@ -151,9 +149,9 @@ export default function MiniDrawer() {
             <Typography variant="h4" noWrap component="div">
               Keep
             </Typography>
- 
+
             <div className="search">
-              <TextField label="Search" fullWidth />
+              <TextField label="Search" />
             </div>
 
             <nav >
@@ -175,26 +173,23 @@ export default function MiniDrawer() {
         <Divider />
         <List>
 
-          {["Notes", "Reminders", "Edit Labels", "Archive", "Bin"].map(
-            // {iconlist.text.map(
+          {iconlist.map((text, index) => (
+            <ListItem button key={text.iText}>
+              <ListItemIcon>
 
-            (text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <LightbulbOutlinedIcon /> : <NotificationsOutlinedIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            )
-          )}
+                {text.icons}
+
+
+              </ListItemIcon>
+              <ListItemText primary={text.iText} />
+            </ListItem>
+          ))}
 
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-              <div>
-              <TextField id="outlined-basic" label="Take a note" variant="outlined" fullWidth />
-              </div>
+        
 
 
         <Typography paragraph>
