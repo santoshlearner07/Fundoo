@@ -20,6 +20,10 @@ import { styled, useTheme } from "@mui/material/styles";
 
 import '../dashboard/Dashboard.scss'
 import { TextField, Button } from "@material-ui/core";
+import TakeANote from "../../components/takeANote/TakeANote";
+import DisplayNote from "../../components/displayNote/DisplayNote";
+import Notes from "../notes/Notes";
+import keep from '../Assests/keep.png' 
 
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
@@ -103,6 +107,7 @@ const Drawer = styled(MuiDrawer, {
 export default function MiniDrawer() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+
   let iconlist = [
     {
       icons: <LightbulbOutlinedIcon />,
@@ -146,13 +151,12 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <div className="mainHeader">
+          <img className="keep" src={keep} alt="this is keep"></img>
             <Typography variant="h4" noWrap component="div">
               Keep
             </Typography>
 
-            <div className="search">
-              <TextField label="Search" />
-            </div>
+            <input className="search" type="text" placeholder="Search"></input>
 
             <nav >
               <ul className="headerIcon">
@@ -189,12 +193,11 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        
 
+        <TakeANote />
+        <DisplayNote />
+        {/* <Notes /> */}
 
-        <Typography paragraph>
-
-        </Typography>
         <Typography paragraph>
 
         </Typography>
