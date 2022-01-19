@@ -23,7 +23,8 @@ import { TextField, Button } from "@material-ui/core";
 import TakeANote from "../../components/takeANote/TakeANote";
 import DisplayNote from "../../components/displayNote/DisplayNote";
 import Notes from "../notes/Notes";
-import keep from '../Assests/keep.png'
+import keep from '../Assests/keep.png';
+// import IconButton from '@mui/material/IconButton';
 
 
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -164,11 +165,11 @@ export default function MiniDrawer() {
             </div>
             <div className="headBar">
               <ul className="headerIcon">
-                <RefreshOutlinedIcon />
-                <ViewStreamOutlinedIcon />
-                <SettingsOutlinedIcon />
-                <AppsOutlinedIcon />
-                <AccountCircleOutlinedIcon />
+              <IconButton> <RefreshOutlinedIcon /> </IconButton>
+              <IconButton> <ViewStreamOutlinedIcon /> </IconButton>
+              <IconButton> <SettingsOutlinedIcon /></IconButton>
+              <IconButton> <AppsOutlinedIcon /></IconButton>
+              <IconButton> <AccountCircleOutlinedIcon /></IconButton>
               </ul>
             </div>
 

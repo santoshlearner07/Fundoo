@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import '../icons/Icon.scss'
 
+import IconButton from '@mui/material/IconButton';
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
@@ -14,12 +15,12 @@ export class Icon extends Component {
     render() {
         return (
             <div className="iconsSecondC">
-                <AddAlertOutlinedIcon />
-                <PersonAddAltOutlinedIcon />
-                <ColorLensOutlinedIcon />
-                <PhotoOutlinedIcon />
-                <ArchiveOutlinedIcon />
-                <MoreVertOutlinedIcon />
+                <IconButton><AddAlertOutlinedIcon /></IconButton>
+                <IconButton><PersonAddAltOutlinedIcon /></IconButton>
+                <IconButton><ColorLensOutlinedIcon /></IconButton>
+                <IconButton><PhotoOutlinedIcon /></IconButton>
+                <IconButton><ArchiveOutlinedIcon /></IconButton>
+                <IconButton><MoreVertOutlinedIcon /></IconButton>
             </div>
         )
     }

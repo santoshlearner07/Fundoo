@@ -9,7 +9,7 @@ import NoteService from "../../services/noteService";
 import Icon from "../icons/Icon";
 import '../takeANote/TakeANote.scss'
 
-
+import IconButton from '@mui/material/IconButton';
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
@@ -74,9 +74,9 @@ export class TakeANote extends Component {
                             <div className="firstContainer">
                                 <input className="firstTitle" type="text" placeholder="Take a Note" onClick={this.changeTakeOpen} />
                                 <div className="firstTitleIcon">
-                                    <CheckBoxOutlinedIcon />
-                                    <BrushOutlinedIcon />
-                                    <PhotoOutlinedIcon />
+                                <IconButton>  <CheckBoxOutlinedIcon /></IconButton>
+                                <IconButton>  <BrushOutlinedIcon /></IconButton>
+                                <IconButton>  <PhotoOutlinedIcon /></IconButton>
 
                                 </div>
                             </div>
@@ -84,7 +84,7 @@ export class TakeANote extends Component {
                             :
                             <div className="secondContainer">
                                 <input className="secondTitle" type="text" name="title" id="" placeholder="Title" onChange={(e) => this.getNotesOnChange} /><br></br>
-                                <input className="secondDescription" type="text" name="description" id="" placeholder="Take a note" onChange={(e) => this.getNotesOnChange} />
+                                <input className="secondDescription" type="text" name="description" id="" placeholder="Take a Note" onChange={(e) => this.getNotesOnChange} />
                                 <div className="thirdPart">
                                     <div className="secondTitleIcon">
                                         <Icon />
