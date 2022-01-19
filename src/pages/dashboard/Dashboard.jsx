@@ -23,8 +23,10 @@ import { TextField, Button } from "@material-ui/core";
 import TakeANote from "../../components/takeANote/TakeANote";
 import DisplayNote from "../../components/displayNote/DisplayNote";
 import Notes from "../notes/Notes";
-import keep from '../Assests/keep.png' 
+import keep from '../Assests/keep.png'
 
+
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
@@ -66,17 +68,18 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
   padding: theme.spacing(0, 1),
   ...theme.mixins.toolbar,
-  backgroundcolor: '#fff' //left
 }));
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open"
 })(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
+  backgroundColor: 'white',
+  boxShadow: "0px",
+  color: "black",
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
-    backgroundColor: '#fff'
   }),
   ...(open && {
     marginLeft: drawerWidth,
@@ -151,14 +154,15 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <div className="mainHeader">
-          <img className="keep" src={keep} alt="this is keep"></img>
-            <Typography variant="h4" noWrap component="div">
+            <img className="keep" src={keep} alt="this is keep"></img>
+            <Typography variant="h5" noWrap component="div">
               Keep
             </Typography>
-
-            <input className="search" type="text" placeholder="Search"></input>
-
-            <nav >
+            <div className="searchBar">
+              <SearchOutlinedIcon />
+              <input className="search" type="text" placeholder="Search"></input>
+            </div>
+            <div className="headBar">
               <ul className="headerIcon">
                 <RefreshOutlinedIcon />
                 <ViewStreamOutlinedIcon />
@@ -166,7 +170,7 @@ export default function MiniDrawer() {
                 <AppsOutlinedIcon />
                 <AccountCircleOutlinedIcon />
               </ul>
-            </nav>
+            </div>
 
           </div>
         </Toolbar>
@@ -177,17 +181,18 @@ export default function MiniDrawer() {
         <Divider />
         <List>
 
-          {iconlist.map((text, index) => (
-            <ListItem button key={text.iText}>
-              <ListItemIcon>
+          {/* <div className="iconName"> */}
+            {iconlist.map((text, index) => (
+              <ListItem button key={text.iText}>
+                <ListItemIcon>
 
-                {text.icons}
+                  {text.icons}
 
-
-              </ListItemIcon>
-              <ListItemText primary={text.iText} />
-            </ListItem>
-          ))}
+                </ListItemIcon>
+                <ListItemText primary={text.iText} />
+              </ListItem>
+            ))}
+          {/* </div> */}
 
         </List>
       </Drawer>

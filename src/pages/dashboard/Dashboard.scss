@@ -1,22 +1,36 @@
 .mainHeader{
     display: flex;
-    margin: 2vh 0vw 0vh 0vw;
+    align-items: center;
+    width: 100%;
+    .searchBar{
+        margin: 0vh 5vw;
+        align-items: center;
+        display: flex;
+        width: 65%;
+        background-color: lightgrey;
+        border-radius: 10px;
+        .search{
+            height: 1cm;
+            width: 25cm;
+            border: none;
+            outline: none;
+            background-color: lightgrey;
+            border-radius: 10px;
+        }
+    }
+    .headBar{
+        justify-content: space-evenly;
+        .headerIcon{
+            display: flex;
+            font-size: 20px;
+            color: #777777;
+            justify-content: space-between;
+        }
+    }
 }
 
-.search{
-    height: 1cm;
-    width: 25cm;
-    margin: 0vh 0vw 0vh 5vw;
-}
-
-.headerIcon{
+.iconName{
     display: flex;
-    font-size: 20px;
-    margin: 1vh 0vw 0vh 0vw;
-    min-width: 20px;
-    color: white;
-}
-
-.keep{
-    margin: -1vh 0vw 1vh 0vw;
+    flex-direction: column;
+    align-items: center;
 }

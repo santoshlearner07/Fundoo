@@ -7,8 +7,8 @@ export class Notes extends Component {
     render() {
         return (
             <div>
-                <TakeANote />
-                <DisplayNote />
+                <TakeANote /><br></br>
+                {/* <DisplayNote /> */}
             </div>
         )
     }

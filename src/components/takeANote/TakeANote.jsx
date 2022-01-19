@@ -6,6 +6,7 @@ import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
 import UserService from "../../services/userService";
 import NoteService from "../../services/noteService";
 
+import Icon from "../icons/Icon";
 import '../takeANote/TakeANote.scss'
 
 
@@ -36,6 +37,9 @@ export class TakeANote extends Component {
     }
 
     changeTakeClose = () => {
+        this.setState({
+            open: true
+        })
 
         let data = {
             "title": this.state.title,
@@ -81,17 +85,13 @@ export class TakeANote extends Component {
                             <div className="secondContainer">
                                 <input className="secondTitle" type="text" name="title" id="" placeholder="Title" onChange={(e) => this.getNotesOnChange} /><br></br>
                                 <input className="secondDescription" type="text" name="description" id="" placeholder="Take a note" onChange={(e) => this.getNotesOnChange} />
-                                <div className="secondTitleIcon">
-                                    <AddAlertOutlinedIcon />
-                                    <PersonAddAltOutlinedIcon />
-                                    <ColorLensOutlinedIcon />
-                                    <PhotoOutlinedIcon />
-                                    <ArchiveOutlinedIcon />
-                                    <MoreVertOutlinedIcon />
+                                <div className="thirdPart">
+                                    <div className="secondTitleIcon">
+                                        <Icon />
                                     </div>
 
                                     <Button className="secondCButton" variant="text" onClick={this.changeTakeClose}>Close</Button>
-                                
+                                </div>
                             </div>
                     }
                 </div>

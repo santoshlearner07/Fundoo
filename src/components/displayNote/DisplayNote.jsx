@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Button } from "@material-ui/core";
 import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
@@ -12,17 +13,19 @@ export class DisplayNote extends Component {
         return (
             <div className="mainDisplay">
                 <div className="displayBox">
-                    <div>Title</div>
-                    <div>Description</div>
-                    <div>
-                        <AddAlertOutlinedIcon />
-                        <PersonAddAltOutlinedIcon />
-                        <ColorLensOutlinedIcon />
-                        <PhotoOutlinedIcon />
-                        <ArchiveOutlinedIcon />
-                        <MoreVertOutlinedIcon />
+                    <input type="text" placeholder="Title"></input> <br></br>
+                    <input type="text" placeholder="Description"></input>
+                    <div className="displayThirdPart">
+                        <div className="displayIcons">
+                            <AddAlertOutlinedIcon />
+                            <PersonAddAltOutlinedIcon />
+                            <ColorLensOutlinedIcon />
+                            <PhotoOutlinedIcon />
+                            <ArchiveOutlinedIcon />
+                            <MoreVertOutlinedIcon />
+                        </div>
+                        <Button className="secondCButton" variant="text" onClick={this.changeTakeClose}>Close</Button>
                     </div>
-
                 </div>
             </div>
         )
