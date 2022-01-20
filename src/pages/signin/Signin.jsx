@@ -58,7 +58,7 @@ export class Signin extends Component {
             uService.signin(data)
                 .then(res => {
                     console.log(res)
-                    localStorage.setItem("token", res.data.id)
+                    localStorage.setItem('token', res.data.id)
                 })
                 .catch(err => {
                     console.log(err)
