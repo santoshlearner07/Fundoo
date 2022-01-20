@@ -42,12 +42,12 @@ export class Forgot extends Component {
 
     next = () => {
         var validated = this.validation();
-        if (validated) {
+        if (!validated) {
             console.log("Validation successfull !!!")
 
             let data = {
-                "email": "santoshwalker719@gmail.com",
-                // "email" : this.state.email
+                // "email": "santoshwalker719@gmail.com",
+                "email" : this.state.email
             };
 
             uService.forgot(data)
@@ -88,9 +88,9 @@ export class Forgot extends Component {
                         />
                     </div>
                     <div className="nextButton">
-                        <Link to="/resetpassword"> <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                         <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                             Next
-                        </Button></Link>
+                        </Button>
                     </div>
                 </div>
             </div>

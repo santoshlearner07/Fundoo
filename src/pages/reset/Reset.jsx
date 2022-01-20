@@ -44,23 +44,23 @@ export class Reset extends Component {
 
     next = () => {
         var validated = this.validation();
-        if (validated) {
+        if (!validated) {
             console.log("Success")
-            let data = {
-                // "newPassword": "Santosh@jkl",
-                // "confirmnewPassword": "Santosh@jkl"
-                "newPassword" : this.state.newPassword,
-                "confirmnewPassword" : this.state.confirmnewPassword
-            };
 
-            uService.reset(data)
-                .then(res => {
-                    console.log(res)
-                })
-                .catch(err => {
-                    console.log(err)
-                })
+            if (this.state.newPassword === this.state.confirmnewPassword) {
+                let data = {
+                    "newPassword": this.state.newPassword,
+                };
 
+                uService.reset(data)
+                    .then(res => {
+                        console.log(res)
+                        localStorage.setItem('token', res.data.id)
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+            }
 
         } else console.log("Something mssing");
     }
@@ -98,7 +98,10 @@ export class Reset extends Component {
                         />
                     </div>
                     <div className="rButton">
-                    <Link to="/signin">   <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                        {/* <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                            Next
+                        </Button> */}
+                        <Link to="/signin">   <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                             Next
                         </Button></Link>
                     </div>

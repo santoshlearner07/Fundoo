@@ -52,7 +52,7 @@ export class Signup extends Component {
 
     next = () => {
         var validated = this.validation();
-        if (validated) {
+        if (!validated) {
             console.log("Validation Completed")
 
             let data = {

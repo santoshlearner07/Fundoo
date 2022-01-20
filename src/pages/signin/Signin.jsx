@@ -42,14 +42,14 @@ export class Signin extends Component {
     }
     next = () => {
         var validated = this.validation();
-        if (validated) {
+        if (!validated) {
             console.log("Validation Successfulll!!!")
 
             let data = {
-                "email": "santoshwalker719@gmail.com",
-                "password": "santosh@W23"
-                    // "email" : this.state.email,
-                    // "password" : this.state.password
+                // "email": "santoshwalker719@gmail.com",
+                // "password": "santosh@W23"
+                    "email" : this.state.email,
+                    "password" : this.state.password
 
             };
 
@@ -70,7 +70,7 @@ export class Signin extends Component {
 
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
         return (
             <div className="login-main-page">
                 <div className="login-content">
