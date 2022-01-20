@@ -3,6 +3,7 @@ import '../signin/Signin.scss'
 import { TextField, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import UserService from "../../services/userService";
+import axios from "axios";
 
 const uService = new UserService();
 
@@ -45,13 +46,15 @@ export class Signin extends Component {
             console.log("Validation Successfulll!!!")
 
             let data = {
-                // "email": "santoshwalker719@gmail.com",
-                // "password": "santosh@W23"
-                    "email" : this.state.email,
-                    "password" : this.state.password
+                "email": "santoshwalker719@gmail.com",
+                "password": "santosh@W23"
+                    // "email" : this.state.email,
+                    // "password" : this.state.password
 
             };
 
+
+            // axios.get('KlEmAMCF6m4VMvBMpV7tdY0haSld7EOZcIfxqrFezIpfvtV4dNp3GTfuxXfixD5J')
             uService.signin(data)
                 .then(res => {
                     console.log(res)
@@ -108,9 +111,12 @@ export class Signin extends Component {
                     <div className="create">
                         <Link to="/"> <p className="c-text" >Create account ?</p> </Link>
                         <div className="box">
-                        <Link to="/dashboard">  <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                        {/* <Link to="/dashboard">  <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                                 Next
-                            </Button></Link>
+                            </Button></Link> */}
+                            <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                                Next
+                            </Button>
                         </div>
                     </div>
                 </div>

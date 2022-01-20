@@ -18,7 +18,7 @@ export class DisplayNote extends Component {
             <div className="mainDisplay">
                 <div className="displayBox">
                     <input type="text" placeholder="Title"></input> <br></br>
-                    {/* <input type="text" placeholder="Description"></input> */}
+                    <input type="text" placeholder="Description"></input>
                     <div className="displayThirdPart">
                         <div className="displayIcons">
                             <AddAlertOutlinedIcon />

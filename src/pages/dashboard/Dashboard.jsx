@@ -182,7 +182,7 @@ export default function MiniDrawer() {
         <Divider />
         <List>
 
-          {/* <div className="iconName"> */}
+          <div className="iconName">
             {iconlist.map((text, index) => (
               <ListItem button key={text.iText}>
                 <ListItemIcon>
@@ -193,7 +193,7 @@ export default function MiniDrawer() {
                 <ListItemText primary={text.iText} />
               </ListItem>
             ))}
-          {/* </div> */}
+          </div>
 
         </List>
       </Drawer>
