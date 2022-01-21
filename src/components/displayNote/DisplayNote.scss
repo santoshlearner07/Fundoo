@@ -27,7 +27,8 @@
         .titleDescrip{
             display: flex;
             flex-direction: column;
-        } 
+            margin: 0vh 1vw;
+        }
         // input{
         //     width: 100%;
         //     height: 70px;
@@ -49,4 +50,9 @@
                 }
             }
     }
+}
+
+.close-Icon{
+    display: flex;
+    margin: 0vh -2vw;
 }
