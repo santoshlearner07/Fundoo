@@ -4,9 +4,7 @@ import TakeANote from "../../components/takeANote/TakeANote";
 import NoteService from "../../services/noteService";
 import '../notes/Notes.scss'
 
-
 const noteService = new NoteService();
-
 
 export class Notes extends Component {
 
@@ -18,27 +16,28 @@ export class Notes extends Component {
     }
 
     componentDidMount() {
-        // this.getAllNotes();
-    // }
+     this.updateNote();   
+       
+    }
 
-    // getAllNotes = () => {
+    updateNote = () =>{
         noteService.getNote()
-            .then((res) => {
-                this.setState({
-                    noteArr: res.data.data.data
-                })
-                console.log(this.state.noteArr)
+        .then((res) => {
+            this.setState({
+                noteArr: res.data.data.data
             })
-            .catch((err) => {
+            console.log(this.state.noteArr)
+        })
+        .catch((err) => {
 
-            })
+        })
     }
 
     render() {
         return (
             <div>
                 <div className="notesBox">
-                    <TakeANote /> <br></br>
+                    <TakeANote updateNote={this.updateNote}/> <br></br>
                     <DisplayNote noteArray={this.state.noteArr} />
 
                 </div>

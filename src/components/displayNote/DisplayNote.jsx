@@ -3,7 +3,6 @@ import { Button } from "@material-ui/core";
 
 import '../displayNote/DisplayNote.scss'
 import Icon from "../icons/Icon";
-import Notes from "../../pages/notes/Notes";
 import NoteService from "../../services/noteService";
 
 const noteService = new NoteService();
@@ -12,13 +11,12 @@ export class DisplayNote extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // noteArray: []
+
         };
     }
 
     render() {
         console.log("this is Display Note")
-        // console.log(this.props.noteArray)
         return (
 
             <div className="mainDisplay">

@@ -34,28 +34,24 @@ export class TakeANote extends Component {
     }
 
     changeTakeClose = () => {
-        console.log("thisISTakeANote");
-        // this.setState({
-        //     opeNote: true,
-        // })
+        console.log("thisIsTakeANote");
        
         let data = {
-            // "title": "title",
-            // "description": "this is description"
             "title": this.state.title,
             "description": this.state.description
         }
 
         noteService.addNote(data)
-            .then(() => {
+            .then(res => {
+                console.log(res)
+            this.props.updateNote();
                 this.setState({
                     opeNote: true,
                     title: '',
                     description: ''
-                    // "title": this.state.title,
-                    // "description": this.state.description
                 })
-            }).catch(err => {
+            })
+            .catch(err => {
                 console.log(err)
             })
     }

@@ -11,13 +11,15 @@
 
 .mainDisplay{
     // justify-content: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
     height: 1cm;
-    width: 50%;
+    width: 100%;
     .displayBox{
         display: flex;
         flex-direction: column;
-        width: 50%;
+        width: 90%;
         height: 100px;
         box-shadow: -1px -1px 5px rgb(153, 150, 150),
         1px 1px 10px rgb(153, 150, 150);
