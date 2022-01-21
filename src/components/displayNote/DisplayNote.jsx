@@ -2,35 +2,41 @@ import React, { Component } from "react";
 import { Button } from "@material-ui/core";
 
 import '../displayNote/DisplayNote.scss'
+import Icon from "../icons/Icon";
+import Notes from "../../pages/notes/Notes";
+import NoteService from "../../services/noteService";
 
-import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
-import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
-import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
-import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
-import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
-import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
-
-
-
+const noteService = new NoteService();
 export class DisplayNote extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            // noteArray: []
+        };
+    }
+
     render() {
+        console.log("this is Display Note")
+        // console.log(this.props.noteArray)
         return (
+
             <div className="mainDisplay">
-                <div className="displayBox">
-                    <input type="text" placeholder="Title"></input> <br></br>
-                    <input type="text" placeholder="Description"></input>
-                    <div className="displayThirdPart">
-                        <div className="displayIcons">
-                            <AddAlertOutlinedIcon />
-                            <PersonAddAltOutlinedIcon />
-                            <ColorLensOutlinedIcon />
-                            <PhotoOutlinedIcon />
-                            <ArchiveOutlinedIcon />
-                            <MoreVertOutlinedIcon />
+
+                {this.props.noteArray.map((item, index) => (
+                    < div className="displayBox">
+
+                        <div className="titleDescrip">
+                            {item.title}  <br></br>
+                            {item.description}
                         </div>
-                        <Button className="secondCButton" variant="text" onClick={this.changeTakeClose}>Close</Button>
+                        <div className="displayThirdPart">
+                            <div className="displayIcons">
+                                <Icon />
+                            </div>
+                        </div>
                     </div>
-                </div>
+                ))}
             </div>
         )
     }

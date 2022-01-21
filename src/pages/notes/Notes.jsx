@@ -10,37 +10,36 @@ const noteService = new NoteService();
 
 export class Notes extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-            noteArray :[]
+            noteArr: []
         }
     }
 
-    componentDidMount(){
-        this.getAllNotes();
-    }
+    componentDidMount() {
+        // this.getAllNotes();
+    // }
 
-        getAllNotes = () =>{
+    // getAllNotes = () => {
         noteService.getNote()
-        .then((res)=>{
-            this.setState({
-                noteArray : res.data
+            .then((res) => {
+                this.setState({
+                    noteArr: res.data.data.data
+                })
+                console.log(this.state.noteArr)
             })
-        })
-        .catch((err)=>{
+            .catch((err) => {
 
-        })
+            })
     }
 
     render() {
         return (
             <div>
                 <div className="notesBox">
-                <TakeANote />                                                                                                                                                                     <br></br><br></br><br></br><br></br><br></br>
-                <DisplayNote />
-                {/* <TakeANote getAll = {this.getAllNotes}/>                                                                                                                                                       <br></br><br></br><br></br><br></br><br></br> */}
-                {/* <DisplayNote noteArray={this.state.noteArray}/> */}
+                    <TakeANote /> <br></br>
+                    <DisplayNote noteArray={this.state.noteArr} />
 
                 </div>
             </div>

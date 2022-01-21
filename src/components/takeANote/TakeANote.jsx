@@ -3,18 +3,13 @@ import { Button } from "@material-ui/core";
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
-import UserService from "../../services/userService";
+// import UserService from "../../services/userService";
 import NoteService from "../../services/noteService";
 
 import Icon from "../icons/Icon";
 import '../takeANote/TakeANote.scss'
 
 import IconButton from '@mui/material/IconButton';
-import AddAlertOutlinedIcon from '@mui/icons-material/AddAlertOutlined';
-import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
-import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
-import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
-import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 
 
 
@@ -26,22 +21,27 @@ export class TakeANote extends Component {
         super(props)
 
         this.state = {
-            open: true
+            opeNote: true,
+            title: '',
+            description: ''
         }
     }
 
     changeTakeOpen = () => {
         this.setState({
-            open: false
+            opeNote: false
         })
     }
 
     changeTakeClose = () => {
-        this.setState({
-            open: true
-        })
-
+        console.log("thisISTakeANote");
+        // this.setState({
+        //     opeNote: true,
+        // })
+       
         let data = {
+            // "title": "title",
+            // "description": "this is description"
             "title": this.state.title,
             "description": this.state.description
         }
@@ -49,10 +49,14 @@ export class TakeANote extends Component {
         noteService.addNote(data)
             .then(() => {
                 this.setState({
-                    open: true,
+                    opeNote: true,
                     title: '',
                     description: ''
+                    // "title": this.state.title,
+                    // "description": this.state.description
                 })
+            }).catch(err => {
+                console.log(err)
             })
     }
 
@@ -65,37 +69,38 @@ export class TakeANote extends Component {
 
 
     render() {
+        console.log(this.state);
         return (
-            <div>
-                <div className="mainContainer">
+            <>
+                <div className="addnote-container">
 
                     {
-                        this.state.open ?
+                        this.state.opeNote ?
                             <div className="firstContainer">
                                 <input className="firstTitle" type="text" placeholder="Take a Note" onClick={this.changeTakeOpen} />
                                 <div className="firstTitleIcon">
-                                <IconButton>  <CheckBoxOutlinedIcon /></IconButton>
-                                <IconButton>  <BrushOutlinedIcon /></IconButton>
-                                <IconButton>  <PhotoOutlinedIcon /></IconButton>
+                                    <IconButton> <CheckBoxOutlinedIcon /></IconButton>
+                                    <IconButton> <BrushOutlinedIcon /></IconButton>
+                                    <IconButton>  <PhotoOutlinedIcon /></IconButton>
 
                                 </div>
                             </div>
-
-                            :
+                        :
                             <div className="secondContainer">
-                                <input className="secondTitle" type="text" name="title" id="" placeholder="Title" onChange={(e) => this.getNotesOnChange} /><br></br>
-                                <input className="secondDescription" type="text" name="description" id="" placeholder="Take a Note" onChange={(e) => this.getNotesOnChange} />
+                              
+                                <input className="secondTitle" type="text" name="title" id="" placeholder="Title" onChange={(e) => this.getNotesOnChange(e)} />
+                                <input className="secondDescription" type="text" name="description" id="" placeholder="Take a Note" onChange={(e) => this.getNotesOnChange(e)} />
                                 <div className="thirdPart">
                                     <div className="secondTitleIcon">
                                         <Icon />
                                     </div>
-
-                                    <Button className="secondCButton" variant="text" onClick={this.changeTakeClose}>Close</Button>
+                                    <button className="secondCButton" onClick={this.changeTakeClose}>Close</button>
+                                    {/* <Button className="secondCButton" variant="text" onClick={this.changeTakeClose}>Close</Button> */}
                                 </div>
                             </div>
-                    }
+                        }
                 </div>
-            </div>
+            </>
         )
     }
 }

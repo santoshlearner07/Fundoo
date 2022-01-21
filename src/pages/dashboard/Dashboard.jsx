@@ -24,8 +24,6 @@ import TakeANote from "../../components/takeANote/TakeANote";
 import DisplayNote from "../../components/displayNote/DisplayNote";
 import Notes from "../notes/Notes";
 import keep from '../Assests/keep.png';
-// import IconButton from '@mui/material/IconButton';
-
 
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
@@ -182,7 +180,7 @@ export default function MiniDrawer() {
         <Divider />
         <List>
 
-          <div className="iconName">
+          {/* <div className="iconName"> */}
             {iconlist.map((text, index) => (
               <ListItem button key={text.iText}>
                 <ListItemIcon>
@@ -193,18 +191,18 @@ export default function MiniDrawer() {
                 <ListItemText primary={text.iText} />
               </ListItem>
             ))}
-          </div>
+          {/* </div> */}
 
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
 
+     
+
+        {/* <Typography paragraph> */}
         <Notes />
-
-        <Typography paragraph>
-
-        </Typography>
+        {/* </Typography> */}
       </Box>
     </Box>
   );

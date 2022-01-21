@@ -21,24 +21,29 @@
         height: 100px;
         box-shadow: -1px -1px 5px rgb(153, 150, 150),
         1px 1px 10px rgb(153, 150, 150);
-        border-radius:8px; 
-        input{
-            width: 100%;
-            height: 70px;
-            @include borderOut();
-        }
+        border-radius:8px;
+        .titleDescrip{
+            display: flex;
+            flex-direction: column;
+        } 
+        // input{
+        //     width: 100%;
+        //     height: 70px;
+        //     @include borderOut();
+        // }
             .displayThirdPart{
                 display: flex;
                 width: 100%;
                 justify-content: space-between;
                 align-items: center;
                 .displayIcons{
-                    width: 60%;
+                    margin: 0vh 1vw;
+                    width: 100%;
                     display: flex;
                     justify-content: space-around;
                 }
                 .secondCButton{
-
+                    margin: 0vh 1vw;
                 }
             }
     }

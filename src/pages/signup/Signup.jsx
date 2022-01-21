@@ -142,9 +142,6 @@ export class Signup extends Component {
                         </div>
                         <div className="last-part">
                             <Link to="/signin"> <p className="signin">Sign in Instead</p> </Link>
-                            {/* <p className="blue-box">
-                                <button className="button1" onClick={this.next}>Next</button>
-                            </p> */}
                             <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                                 Next
                             </Button>

@@ -9,11 +9,11 @@
         border-radius:8px;
 }
 
-.mainContainer{
+.addnote-container{
     justify-content: center;
     margin: 0vh 0vw 0vh 20vw;
     display: flex;
-    height: 1cm;
+    height: 100%;
     width: 50%;
     .firstContainer{
         justify-content: center;
@@ -59,7 +59,7 @@
                 justify-content: space-around;
             }
             .secondCButton{
-
+                margin: 0vh 2vw 0vh 0vw;
             }
     }
     }
@@ -69,57 +69,3 @@
 
 
 
-// @mixin basicContent {
-//     align-items: center;
-//     justify-content: center;
-// }
-
-// @mixin boxBorder {
-//     box-shadow: -1px -1px 5px rgb(153, 150, 150),
-//                 1px 1px 5px rgb(153, 150, 150);
-//     border-radius:8px;
-// }
-
-// $border : 1px solid lightgray;
-
-// .mainContainer{
-//     @include basicContent();
-//         .firstContainer{
-//             @include basicContent();
-//                 .firstTitle{
-//                     height: 1.2cm;
-//                     width: 25cm;
-//                     margin: 0vh 0vw 0vh 15vw;
-//                     border: $border;
-//                     @include boxBorder();
-//                 }
-//                 .firstTitleIcon{
-//                     margin: -4vh 0vw 0vh 70vw;
-//                     justify-content: space-between;
-                
-//                 }
-//         }
-//         .secondContainer{
-//             margin: 0vh 0vw 0vh 25vw;
-//             height: 3cm;
-//             width: 20cm;
-//                 .secondTitle{
-//                     height: 1cm;
-//                     width: 15cm;
-//                     border: $border;
-//                     @include boxBorder();
-//                 }
-//                 .secondDescription{
-//                     height: 3cm;
-//                     width: 15cm;
-//                     border: $border;
-//                     @include boxBorder();
-//                 }
-//                 .secondTitleIcon{
-//                     margin: -4vh 0vw 0vh 0vw;
-//                 }
-//                 .secondCButton{
-//                     margin: -8vh 0vw 0vh 32vw;
-//                 }
-//         }
-// }

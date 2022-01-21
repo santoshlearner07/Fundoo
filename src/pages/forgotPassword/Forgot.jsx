@@ -53,6 +53,7 @@ export class Forgot extends Component {
             uService.forgot(data)
                 .then(res => {
                     console.log(res)
+                    localStorage.setItem('token', res.data.id)
                 })
                 .catch(err => {
                     console.log(err)

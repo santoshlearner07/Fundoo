@@ -53,12 +53,11 @@ export class Signin extends Component {
 
             };
 
-
-            // axios.get('KlEmAMCF6m4VMvBMpV7tdY0haSld7EOZcIfxqrFezIpfvtV4dNp3GTfuxXfixD5J')
             uService.signin(data)
                 .then(res => {
                     console.log(res)
                     localStorage.setItem('token', res.data.id)
+                    // this.props.history.push("/dashboard")
                 })
                 .catch(err => {
                     console.log(err)
@@ -70,7 +69,7 @@ export class Signin extends Component {
 
 
     render() {
-        // console.log(this.state)
+        console.log(this.state)
         return (
             <div className="login-main-page">
                 <div className="login-content">
@@ -93,9 +92,6 @@ export class Signin extends Component {
                             onChange={e => this.checkData(e)}
                         />
                     </div>
-                    {/* <div className="password">
-                        <TextField id="outlined-basic" label="Password" variant="outlined" helperText="Forgot Password" fullWidth />
-                    </div> */}
                     <div className="Password">
                         <TextField name="password" id="outlined-basic" label="Password" type="password" variant="outlined" helperText="Forgot Password" fullWidth
                             error={this.state.passwordError}
@@ -111,12 +107,12 @@ export class Signin extends Component {
                     <div className="create">
                         <Link to="/"> <p className="c-text" >Create account ?</p> </Link>
                         <div className="box">
-                        {/* <Link to="/dashboard">  <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                        <Link to="/dashboard">  <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                                 Next
-                            </Button></Link> */}
-                            <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                            </Button></Link>
+                            {/* <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                                 Next
-                            </Button>
+                            </Button> */}
                         </div>
                     </div>
                 </div>
