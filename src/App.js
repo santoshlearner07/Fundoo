@@ -10,32 +10,21 @@ import Signin from './pages/signin/Signin';
 import { Forgot } from './pages/forgotPassword/Forgot';
 import Reset from './pages/reset/Reset';
 import Dashboard from './pages/dashboard/Dashboard';
-
+import IconColor from './components/colors/IconColor';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        {/* <Signup /> */}
-        {/* {<Dashboard />} */}
-      </div>
       <Switch>
-
         <Route path='/' component={Signup} exact />
         <Route path='/signin' component={Signin} />
         <Route path='/forgot' component={Forgot} />
         <Route path='/resetpassword' component={Reset} />
         <Route path='/dashboard' component={Dashboard} />
-
+        <Route path='/ic' component={IconColor} /> 
+        <Route path='*' component={() => "404 Not Found"} />
       </Switch>
     </BrowserRouter>
-    //    <div className="App">
-    //    {/* <Signup /> */}
-    //    {/* <Signin /> */}
-    //    {/* <Forgot /> */}
-    //    {/* <Reset /> */}
-    //    {<Dashboard />}
-    //  </div>
   );
 }
 

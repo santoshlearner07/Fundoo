@@ -12,7 +12,7 @@
 .mainDisplay{
     // justify-content: center;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     grid-gap: 10px;
     height: 1cm;
     width: 100%;
@@ -54,5 +54,5 @@
 
 .close-Icon{
     display: flex;
-    margin: 0vh -2vw;
+    margin: 0vh -5vw;
 }

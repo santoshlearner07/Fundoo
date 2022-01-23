@@ -96,6 +96,7 @@ export class DisplayNote extends Component {
                         </div>
                         <div className="displayThirdPart">
                             <div className="displayIcons">
+                                
                                 <Icon />
                             </div>
                         </div>

@@ -1,0 +1,71 @@
+@mixin IconColor {
+    width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            margin: 0.5vh 0vw;
+}
+
+
+.color-image{
+width: 100%;
+height: 100%;
+    .iconColor{
+        display: flex;
+        .red{
+            @include IconColor();
+            background-color: #f28b82;
+        }
+        .orange{
+            @include IconColor();
+            background-color:  #fbbc04;
+        }
+        .yellow{
+            @include IconColor();
+            background-color:#fff475;
+        }
+        .green{
+            @include IconColor();
+            background-color:#ccff90;
+        }
+        .teal{
+            @include IconColor();
+            background-color: #a7ffeb;
+        }
+        .blue{
+            @include IconColor();
+            background-color:#cbf0f8;
+        }
+        .darkblue{
+            @include IconColor();
+            background-color:#aecbfa;
+        }
+        .purple{
+            @include IconColor();
+            background-color:#d7aefb;
+        }
+        .pink{
+            @include IconColor();
+            background-color:#fdcfe8;
+        }
+        .brown{
+            @include IconColor();
+            background-color:#e6c9a8;
+        }
+        .grey{
+            @include IconColor();
+            background-color:#e8eaed;
+        }
+    }
+    .iconImage{
+        display: flex;
+        .defaultImage{
+            // width: 100px;
+            // height: 100px;
+        }
+        .image{
+            width: 35px;
+            height: 35px;
+            border-radius: 25px;
+        }
+    }
+}

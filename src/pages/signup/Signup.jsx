@@ -10,6 +10,7 @@ const uService = new UserService();
 
 export class Signup extends Component {
 
+
     constructor(props) {
         super(props)
         this.state = {
@@ -49,14 +50,13 @@ export class Signup extends Component {
         return isError = error.firstNameError || error.lastNameError || error.emailError || error.passwordError || error.confirmPasswordError; // 
     }
 
-
     next = () => {
         var validated = this.validation();
         if (!validated) {
             console.log("Validation Completed")
 
             let data = {
-                "firstName": this.state.firstName ,
+                "firstName": this.state.firstName,
                 "lastName": this.state.lastName,
                 "email": this.state.email,
                 "password": this.state.password,
