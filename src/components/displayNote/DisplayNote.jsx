@@ -45,10 +45,10 @@ const BootstrapDialogTitle = (props) => {
     );
 };
 
-BootstrapDialogTitle.propTypes = {
-    children: PropTypes.node,
-    onClose: PropTypes.func.isRequired,
-};
+// BootstrapDialogTitle.propTypes = {
+//     children: PropTypes.node,
+//     onClose: PropTypes.func.isRequired,
+// };
 
 export class DisplayNote extends Component {
     constructor(props) {
@@ -75,6 +75,13 @@ export class DisplayNote extends Component {
         })
     }
 
+    fetchOriginalName = (e) => {
+            this.setState({
+                [e.target.name]: e.target.value
+            })
+            console.log(e.target.value)
+        }
+
     render() {
         console.log("this is Display Note")
         return (
@@ -98,12 +105,12 @@ export class DisplayNote extends Component {
                     <div style={{ width: "100%", overflow: "hidden" }}>
                         <BootstrapDialogTitle id="customized-dialog-title" onClose={this.handleClose} >
 
-                            Title-1
+                                {/* <input type="text" style={{ border: "none", outline: "none" }} value={this.state.title} name="title" onChange={(e) => this.fetchOriginalName(e)} /> */}
 
                         </BootstrapDialogTitle>
                         <DialogContent>
 
-                            Description
+                                {/* <input type="text" style={{ border: "none", outline: "none" }} value={this.state.description} name="description" onChange={(e) => this.fetchOriginalName(e)} /> */}
 
                         </DialogContent>
                         <DialogContent className="close-Icon" >
