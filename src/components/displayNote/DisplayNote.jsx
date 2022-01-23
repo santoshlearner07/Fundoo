@@ -105,12 +105,12 @@ export class DisplayNote extends Component {
                     <div style={{ width: "100%", overflow: "hidden" }}>
                         <BootstrapDialogTitle id="customized-dialog-title" onClose={this.handleClose} >
 
-                                {/* <input type="text" style={{ border: "none", outline: "none" }} value={this.state.title} name="title" onChange={(e) => this.fetchOriginalName(e)} /> */}
+                                <input type="text" style={{ border: "none", outline: "none" }} value={this.state.title} name="title" onChange={(e) => this.fetchOriginalName(e)} />
 
                         </BootstrapDialogTitle>
                         <DialogContent>
 
-                                {/* <input type="text" style={{ border: "none", outline: "none" }} value={this.state.description} name="description" onChange={(e) => this.fetchOriginalName(e)} /> */}
+                                <input type="text" style={{ border: "none", outline: "none" }} value={this.state.description} name="description" onChange={(e) => this.fetchOriginalName(e)} />
 
                         </DialogContent>
                         <DialogContent className="close-Icon" >
