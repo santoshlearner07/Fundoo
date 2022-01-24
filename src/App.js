@@ -1,9 +1,7 @@
-import reactDom from 'react-dom';
 import {
   BrowserRouter, Route, Switch
 } from 'react-router-dom';
 
-import logo from './logo.svg';
 import './App.css';
 import Signup from './pages/signup/Signup';
 import Signin from './pages/signin/Signin';
