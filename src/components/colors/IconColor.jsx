@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React, { Component } from "react";
 import '../colors/IconColor.scss'
 import ImageNotSupportedOutlinedIcon from '@mui/icons-material/ImageNotSupportedOutlined';
@@ -11,7 +10,7 @@ export class IconColor extends Component {
         return (
             <div className="color-image">
                 <div className="iconColor">
-                    <IconButton> <InvertColorsOffOutlinedIcon /> </IconButton>
+                    {/* <IconButton> <InvertColorsOffOutlinedIcon /> </IconButton> */}
                     <div className="red"></div>
                     <div className="orange"></div>
                     <div className="yellow"></div>
@@ -24,7 +23,7 @@ export class IconColor extends Component {
                     <div className="brown"></div>
                     <div className="grey"></div>
                 </div>
-                <div className="iconImage">
+                {/* <div className="iconImage">
                     <IconButton> <ImageNotSupportedOutlinedIcon /> </IconButton>
                     <img className="image" src="https://www.gstatic.com/keep/backgrounds/grocery_light_thumb_0615.svg" ></img>
                     <img className="image" src="https://www.gstatic.com/keep/backgrounds/food_light_thumb_0615.svg"></img>
@@ -35,7 +34,7 @@ export class IconColor extends Component {
                     <img className="image" src="https://www.gstatic.com/keep/backgrounds/travel_light_thumb_0615.svg"></img>
                     <img className="image" src="https://www.gstatic.com/keep/backgrounds/video_light_thumb_0615.svg"></img>
                     <img className="image" src="https://www.gstatic.com/keep/backgrounds/celebration_light_thumb_0715.svg"></img>
-                </div>
+                </div> */}
             </div>
         )
     }
