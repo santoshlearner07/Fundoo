@@ -32,23 +32,23 @@ export class Icon extends Component {
     }
 
     //popover
-    handleOpen = (e) => {
+    handleOpenMore = (e) => {
         this.setState({
             anchorEl: e.currentTarget,
         })
     }
-    handleOpenn = (e) => {
+    handleOpenColor = (e) => {
         this.setState({
             color1: e.currentTarget
         })
     }
 
-    handleClose = () => {
+    handleCloseMore = () => {
         this.setState({
             anchorEl: false,
         })
     }
-    handleClosee = () => {
+    handleCloseColor = () => {
         this.setState({
             color1: false
         })
@@ -66,13 +66,13 @@ export class Icon extends Component {
 
                 <div>
 
-                    <IconButton><ColorLensOutlinedIcon onClick={(e) => this.handleOpenn(e)} /></IconButton>
+                    <IconButton><ColorLensOutlinedIcon onClick={(e) => this.handleOpenColor(e)} /></IconButton>
                     <Popover
                         id="simple-menu"
                         anchorEl={color1}
                         keepMounted
                         open={Boolean(color1)}
-                        onClose={this.handleClosee}
+                        onClose={this.handleCloseColor}
                         anchorOrigin={{
                             vertical: "bottom",
                             horizontal: "left"
@@ -85,24 +85,24 @@ export class Icon extends Component {
                 <IconButton><PhotoOutlinedIcon /></IconButton>
                 <IconButton><ArchiveOutlinedIcon /></IconButton>
                 <div>
-                    <IconButton> <MoreVertOutlinedIcon onClick={(e) => this.handleOpen(e)} /> </IconButton>
+                    <IconButton> <MoreVertOutlinedIcon onClick={(e) => this.handleOpenMore(e)} /> </IconButton>
 
                     <Popover
                         id="simple-menu"
                         anchorEl={anchorEl}
                         keepMounted
                         open={Boolean(anchorEl)}
-                        onClose={this.handleClose}
+                        onClose={this.handleCloseMore}
                         anchorOrigin={{
                             vertical: "bottom",
                             horizontal: "left"
                         }}
                     >
-                        <MenuItem onClick={this.handleClose}>Delete note</MenuItem>
-                        <MenuItem onClick={this.handleClose}>Add label</MenuItem>
-                        <MenuItem onClick={this.handleClose}>Add drawing</MenuItem>
-                        <MenuItem onClick={this.handleClose}>Make a copy</MenuItem>
-                        <MenuItem onClick={this.handleClose}>Show tick boxes</MenuItem>
+                        <MenuItem onClick={this.handleCloseMore}>Delete note</MenuItem>
+                        <MenuItem onClick={this.handleCloseMore}>Add label</MenuItem>
+                        <MenuItem onClick={this.handleCloseMore}>Add drawing</MenuItem>
+                        <MenuItem onClick={this.handleCloseMore}>Make a copy</MenuItem>
+                        <MenuItem onClick={this.handleCloseMore}>Show tick boxes</MenuItem>
                     </Popover>
                 </div>
             </div>

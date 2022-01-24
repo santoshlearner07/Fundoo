@@ -22,7 +22,7 @@ function App() {
         <Route path='/resetpassword' component={Reset} />
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/ic' component={IconColor} /> 
-        <Route path='*' component={() => "404 Not Found"} />
+        <Route path='*' component={() => "Error 404 Page Not Found"} />
       </Switch>
     </BrowserRouter>
   );

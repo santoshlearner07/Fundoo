@@ -38,7 +38,7 @@ const BootstrapDialogTitle = (props) => {
                         color: (theme) => theme.palette.grey[500],
                     }}
                 >
-                    <CloseIcon />
+                    {/* <CloseIcon /> */}
                 </IconButton>
             ) : null}
         </DialogTitle>
@@ -87,11 +87,11 @@ export class DisplayNote extends Component {
         return (
             <div className='mainDisplay'>
                 {this.props.noteArray.map((item, index) => (
-                    <div className='displayBox' onClick={() => this.handleOpenTitle(item)}>
-                        <div className='titleDescrip'>
+                    <div className='displayBox' >
+                        <div className='titleDescrip' onClick={() => this.handleOpenTitle(item)}>
 
                             {item.title}<br></br>
-                            {item.description}
+                            {item.description}<br></br>
 
                         </div>
                         <div className="displayThirdPart">
