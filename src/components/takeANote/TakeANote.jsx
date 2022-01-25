@@ -23,7 +23,9 @@ export class TakeANote extends Component {
         this.state = {
             opeNote: true,
             title: '',
-            description: ''
+            description: '',
+            color: '#ffffff',
+            archive: false
         }
     }
 
@@ -33,22 +35,39 @@ export class TakeANote extends Component {
         })
     }
 
+    changeColor =(val) =>{
+        this.setState({
+            color: val
+        })
+    }
+
     changeTakeClose = () => {
         console.log("thisIsTakeANote");
        
         let data = {
             "title": this.state.title,
-            "description": this.state.description
+            "description": this.state.description,
+            "color" : this.state.color,
+            "isArchived":this.state.archive
         }
+
+        // const formData = new FormData();
+        // formData.append("title",this.state.title)
+        // formData.append("description",this.state.description)
+        // formData.append("color",this.state.color)
+        // formData.append("isArchived",this.state.isArchived)
+
 
         noteService.addNote(data)
             .then(res => {
                 console.log(res)
             this.props.updateNote();
+            // this.props.changeColor();
                 this.setState({
                     opeNote: true,
                     title: '',
-                    description: ''
+                    description: '',
+                    color : '#ffffff'
                 })
             })
             .catch(err => {
@@ -72,7 +91,7 @@ export class TakeANote extends Component {
 
                     {
                         this.state.opeNote ?
-                            <div className="firstContainer">
+                            <div className="firstContainer" >
                                 <input className="firstTitle" type="text" placeholder="Take a Note" onClick={this.changeTakeOpen} />
                                 <div className="firstTitleIcon">
                                     <IconButton> <CheckBoxOutlinedIcon /></IconButton>
@@ -82,13 +101,15 @@ export class TakeANote extends Component {
                                 </div>
                             </div>
                         :
-                            <div className="secondContainer">
+                            <div className="secondContainer" style={{backgroundColor: this.state.color}}> 
                               
                                 <input className="secondTitle" type="text" name="title" id="" placeholder="Title" onChange={(e) => this.getNotesOnChange(e)} />
                                 <input className="secondDescription" type="text" name="description" id="" placeholder="Take a Note" onChange={(e) => this.getNotesOnChange(e)} />
                                 <div className="thirdPart">
                                     <div className="secondTitleIcon">
-                                        <Icon />
+
+                                        <Icon changeColor = {this.changeColor}/>
+                                        
                                     </div>
                                     <button className="secondCButton" onClick={this.changeTakeClose}>Close</button>
                                     {/* <Button className="secondCButton" variant="text" onClick={this.changeTakeClose}>Close</Button> */}

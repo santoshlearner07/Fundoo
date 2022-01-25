@@ -163,11 +163,11 @@ export default function MiniDrawer() {
             </div>
             <div className="headBar">
               <ul className="headerIcon">
-              <IconButton> <RefreshOutlinedIcon /> </IconButton>
-              <IconButton> <ViewStreamOutlinedIcon /> </IconButton>
-              <IconButton> <SettingsOutlinedIcon /></IconButton>
-              <IconButton> <AppsOutlinedIcon /></IconButton>
-              <IconButton> <AccountCircleOutlinedIcon /></IconButton>
+                <IconButton> <RefreshOutlinedIcon /> </IconButton>
+                <IconButton> <ViewStreamOutlinedIcon /> </IconButton>
+                <IconButton> <SettingsOutlinedIcon /></IconButton>
+                <IconButton> <AppsOutlinedIcon /></IconButton>
+                <IconButton> <AccountCircleOutlinedIcon /></IconButton>
               </ul>
             </div>
 
@@ -181,16 +181,16 @@ export default function MiniDrawer() {
         <List>
 
           {/* <div className="iconName"> */}
-            {iconlist.map((text, index) => (
-              <ListItem button key={text.iText}>
-                <ListItemIcon>
+          {iconlist.map((text, index) => (
+            <ListItem button key={text.iText}>
+              <ListItemIcon>
 
-                  {text.icons}
+                {text.icons}
 
-                </ListItemIcon>
-                <ListItemText primary={text.iText} />
-              </ListItem>
-            ))}
+              </ListItemIcon>
+              <ListItemText primary={text.iText} />
+            </ListItem>
+          ))}
           {/* </div> */}
 
         </List>
@@ -198,7 +198,7 @@ export default function MiniDrawer() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
 
-     
+
 
         {/* <Typography paragraph> */}
         <Notes />

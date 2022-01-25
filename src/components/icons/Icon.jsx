@@ -13,10 +13,17 @@ import IconColor from "../colors/IconColor";
 
 
 //poper
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Popover } from '@material-ui/core';
+
+
+let More = ["Delete note", "Add label", "Add drawing", "Make a copy", "Show tick boxes"]
+
+let colorssss = [
+    "#f28b82", "#fbbc04", "#fff475", "#ccff90",
+    "#a7ffeb", "#cbf0f8", "#aecbfa", "#d7aefb",
+    "#fdcfe8", "#e6c9a8", "#e8eaed", "#aecbfa"
+]
 
 
 export class Icon extends Component {
@@ -43,6 +50,10 @@ export class Icon extends Component {
         })
     }
 
+    updateColor = (colorValue) => {
+        this.props.changeColor(colorValue)
+    }
+
     handleCloseMore = () => {
         this.setState({
             anchorEl: false,
@@ -63,7 +74,6 @@ export class Icon extends Component {
             <div className="iconsSecondC">
                 <IconButton><AddAlertOutlinedIcon /></IconButton>
                 <IconButton><PersonAddAltOutlinedIcon /></IconButton>
-
                 <div>
 
                     <IconButton><ColorLensOutlinedIcon onClick={(e) => this.handleOpenColor(e)} /></IconButton>
@@ -78,7 +88,16 @@ export class Icon extends Component {
                             horizontal: "left"
                         }}
                     >
-                        <IconColor />
+                        {
+                            colorssss.map((item, index) => (
+                                <div className="iconColorss">
+                                    <div className="colorPallets"  onClick={()=>this.updateColor(item)} 
+                                    style={{ backgroundColor: item }}>
+                                        {item.backgroundColor}
+                                    </div>
+                                </div>
+                            ))
+                        }
                     </Popover>
                 </div>
 
@@ -98,11 +117,13 @@ export class Icon extends Component {
                             horizontal: "left"
                         }}
                     >
-                        <MenuItem onClick={this.handleCloseMore}>Delete note</MenuItem>
-                        <MenuItem onClick={this.handleCloseMore}>Add label</MenuItem>
-                        <MenuItem onClick={this.handleCloseMore}>Add drawing</MenuItem>
-                        <MenuItem onClick={this.handleCloseMore}>Make a copy</MenuItem>
-                        <MenuItem onClick={this.handleCloseMore}>Show tick boxes</MenuItem>
+                        {
+                            More.map((more, index) => (
+                                <MenuItem onClick={this.handleCloseMore}>
+                                    {more}
+                                </MenuItem>
+                            ))
+                        }
                     </Popover>
                 </div>
             </div>
