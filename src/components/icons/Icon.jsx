@@ -65,6 +65,11 @@ export class Icon extends Component {
         })
     }
 
+    useArchive=()=>{
+        console.log("Archeive")
+        this.props.changeArchive(true)
+    }
+
     render() {
 
         //popover
@@ -103,7 +108,7 @@ export class Icon extends Component {
 
                 <IconButton><PhotoOutlinedIcon /></IconButton>
                 <div>
-                    <IconButton><ArchiveOutlinedIcon /></IconButton>
+                    <IconButton><ArchiveOutlinedIcon onClick={(e) => this.useArchive(e)}/></IconButton>
                 </div>
                 <div>
                     <IconButton> <MoreVertOutlinedIcon onClick={(e) => this.handleOpenMore(e)} /> </IconButton>

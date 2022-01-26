@@ -41,23 +41,29 @@ export class TakeANote extends Component {
         })
     }
 
+    changeArchive =(val) =>{
+        this.setState({
+            archive: val
+        })
+    }
+
     changeTakeClose = () => {
         console.log("thisIsTakeANote");
        
-        let data = {
-            "title": this.state.title,
-            "description": this.state.description,
-            "color" : this.state.color,
-            "isArchived":this.state.archive
-        }
+        // let data = {
+        //     "title": this.state.title,
+        //     "description": this.state.description,
+        //     "color" : this.state.color,
+        //     "isArchived":this.state.archive
+        // }
 
-        // const formData = new FormData();
-        // formData.append("title",this.state.title)
-        // formData.append("description",this.state.description)
-        // formData.append("color",this.state.color)
-        // formData.append("isArchived",this.state.isArchived)
+        const formData = new FormData();
+        formData.append("title",this.state.title)
+        formData.append("description",this.state.description)
+        formData.append("color",this.state.color)
+        formData.append("isArchived",this.state.archive)
 
-        noteService.addNote(data)
+        noteService.addNote(formData)
             .then(res => {
                 console.log(res)
             this.props.updateNote();
@@ -66,7 +72,8 @@ export class TakeANote extends Component {
                     opeNote: true,
                     title: '',
                     description: '',
-                    color : '#ffffff'
+                    color : '#ffffff',
+                    archive: false
                 })
             })
             .catch(err => {
@@ -105,7 +112,7 @@ export class TakeANote extends Component {
                                 <div className="thirdPart">
                                     <div className="secondTitleIcon">
 
-                                        <Icon changeColor = {this.changeColor}/>
+                                        <Icon changeColor = {this.changeColor}  changeArchive={this.changeArchive}/>
                                         
                                     </div>
                                     <button className="secondCButton" onClick={this.changeTakeClose}>Close</button>
