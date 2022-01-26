@@ -1,6 +1,5 @@
 import AxiosService from "./axioService";
 
-
 let baseUrl = 'http://fundoonotes.incubation.bridgelabz.com/api/';
 const service = new AxiosService();
 
@@ -26,8 +25,6 @@ class UserService {
   reset(data) {
     return service.postMethod(`${baseUrl}user/reset-password`, data,header)
   }
-
 }
-
 
 export default UserService

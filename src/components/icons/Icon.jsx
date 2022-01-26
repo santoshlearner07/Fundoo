@@ -91,8 +91,8 @@ export class Icon extends Component {
                         {
                             colorssss.map((item, index) => (
                                 <div className="iconColorss">
-                                    <div className="colorPallets"  onClick={()=>this.updateColor(item)} 
-                                    style={{ backgroundColor: item }}>
+                                    <div className="colorPallets" onClick={() => this.updateColor(item)}
+                                        style={{ backgroundColor: item }}>
                                         {item.backgroundColor}
                                     </div>
                                 </div>
@@ -102,7 +102,9 @@ export class Icon extends Component {
                 </div>
 
                 <IconButton><PhotoOutlinedIcon /></IconButton>
-                <IconButton><ArchiveOutlinedIcon /></IconButton>
+                <div>
+                    <IconButton><ArchiveOutlinedIcon /></IconButton>
+                </div>
                 <div>
                     <IconButton> <MoreVertOutlinedIcon onClick={(e) => this.handleOpenMore(e)} /> </IconButton>
 

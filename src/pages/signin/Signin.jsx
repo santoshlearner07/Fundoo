@@ -18,7 +18,6 @@ export class Signin extends Component {
             emailError: false,
             passwordError: false
         }
-
     }
 
     checkData = (e) => {
@@ -50,19 +49,21 @@ export class Signin extends Component {
                 // "password": "santosh@W23"
                     "email" : this.state.email,
                     "password" : this.state.password
-
             };
+
+            // if(this.state.email && this.state.password){
 
             uService.signin(data)
                 .then(res => {
                     console.log(res)
                     localStorage.setItem('token', res.data.id)
+                    // localStorage.setItem('token', res.data.email)
                     // this.props.history.push("/dashboard")
                 })
                 .catch(err => {
                     console.log(err)
                 })
-
+            // }
         } else console.log("OOPS!!! You missed something")
     }
 

@@ -57,7 +57,6 @@ export class TakeANote extends Component {
         // formData.append("color",this.state.color)
         // formData.append("isArchived",this.state.isArchived)
 
-
         noteService.addNote(data)
             .then(res => {
                 console.log(res)
@@ -80,8 +79,6 @@ export class TakeANote extends Component {
             [e.target.name]: e.target.value
         })
     }
-
-
 
     render() {
         console.log(this.state);

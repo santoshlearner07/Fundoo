@@ -65,7 +65,9 @@ export class Signup extends Component {
 
             uService.registration(data)
                 .then(res => {
-                    // console.log(res)
+                    console.log(res)
+                    localStorage.setItem('token', res.data.id)
+                    // localStorage.setItem('email', res.data.email)
                 })
                 .catch(err => {
                     // console.log(err)
