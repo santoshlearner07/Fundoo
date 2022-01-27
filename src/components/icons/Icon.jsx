@@ -135,7 +135,9 @@ export class Icon extends Component {
                 <div>
 
                     <IconButton><ColorLensOutlinedIcon onClick={(e) => this.handleOpenColor(e)} /></IconButton>
-                    <Popover className="popOverIcon"
+                    <Popover 
+                    style={{display: 'flex'}}
+                    // className="popOverIcon"
                         id="simple-menu"
                         anchorEl={color1}
                         keepMounted

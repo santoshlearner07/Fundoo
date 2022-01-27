@@ -60,6 +60,7 @@ export class TakeANote extends Component {
             .then(res => {
                 console.log(res)
             this.props.updateNote();
+            this.props.updateDiplayNote();
             // this.props.changeColor();
                 this.setState({
                     opeNote: true,
@@ -89,7 +90,7 @@ export class TakeANote extends Component {
                     {
                         this.state.opeNote ?
                             <div className="firstContainer" >
-                                <input className="firstTitle" type="text" placeholder="Take a Note" onClick={this.changeTakeOpen} />
+                                <input className="firstTitle" type="text" placeholder="Take a Note..." onClick={this.changeTakeOpen} />
                                 <div className="firstTitleIcon">
                                     <IconButton> <CheckBoxOutlinedIcon /></IconButton>
                                     <IconButton> <BrushOutlinedIcon /></IconButton>
@@ -101,7 +102,7 @@ export class TakeANote extends Component {
                             <div className="secondContainer" style={{backgroundColor: this.state.color}}> 
                               
                                 <input className="secondTitle" type="text" name="title" id="" placeholder="Title" onChange={(e) => this.getNotesOnChange(e)} />
-                                <input className="secondDescription" type="text" name="description" id="" placeholder="Take a Note" onChange={(e) => this.getNotesOnChange(e)} />
+                                <input className="secondDescription" type="text" name="description" id="" placeholder="Take a Note..." onChange={(e) => this.getNotesOnChange(e)} />
                                 <div className="thirdPart">
                                     <div className="secondTitleIcon">
 

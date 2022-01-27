@@ -9,6 +9,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Icon from "../icons/Icon";
+import NoteService from "../../services/noteService";
+const noteService = new NoteService();
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -68,9 +70,33 @@ export class DisplayNote extends Component {
     }
 
     handleClose = () => {
-        this.setState({
-            open: false,
-        })
+        // this.setState({
+        //     open: false,
+        // })
+        console.log("thisIsDisplayNote");
+
+        const formData = new FormData();
+        formData.append("title",this.state.title)
+        formData.append("description",this.state.description)
+        formData.append("color",this.state.color)
+        formData.append("isArchived",this.state.archive)
+
+        noteService.getNote(formData)
+            .then(res => {
+                console.log(res)
+            this.props.updateDiplayNote();
+            // this.props.changeColor();
+                this.setState({
+                    open: false,
+                    title: '',
+                    description: '',
+                    color : '#ffffff',
+                    archive: false
+                })
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 
     fetchOriginalName = (e) => {

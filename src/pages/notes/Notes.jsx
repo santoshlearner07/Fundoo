@@ -16,20 +16,34 @@ export class Notes extends Component {
     }
 
     componentDidMount() {
-     this.updateNote();   
-       
+        this.updateNote();
+        this.updateDiplayNote();
     }
 
-    updateNote = () =>{
+    updateNote = () => {
         noteService.getNote()
-        .then((res) => {
-            this.setState({
-                noteArr: res.data.data.data
+            .then((res) => {
+                this.setState({
+                    noteArr: res.data.data.data
+                })
+                console.log(this.state.noteArr)
             })
-            console.log(this.state.noteArr)
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+    updateDiplayNote=()=>{
+        noteService.getNote()
+        .then(res =>{
+            console.log("datdatdat In")
+            this.setState({
+                noteArr:res.data.data.data
+            })
+            console.log("datdatdat out")
+            console.log(res)
         })
-        .catch((err) => {
-
+        .catch(err =>{
+            console.log(err)
         })
     }
 
@@ -37,9 +51,8 @@ export class Notes extends Component {
         return (
             <div>
                 <div className="notesBox">
-                    <TakeANote updateNote={this.updateNote}/> <br></br>
-                    <DisplayNote noteArray={this.state.noteArr} />
-
+                    <TakeANote updateNote={this.updateNote} /> <br></br>
+                    <DisplayNote noteArray={this.state.noteArr} updateDiplayNote={this.updateDiplayNote}/>
                 </div>
             </div>
         )
