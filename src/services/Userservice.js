@@ -25,6 +25,17 @@ class UserService {
   reset(data) {
     return service.postMethod(`${baseUrl}user/reset-password`, data,header)
   }
+
+  colorChange(data){
+    return service.postMethod(`${baseUrl}notes/changesColorNotes`,data,header)
+  }
+  changeArchive(data){
+    return service.postMethod(`${baseUrl}notes/archiveNotes`,data,header)
+  }
+  deleteNote(data){
+    return service.postMethod(`${baseUrl}notes/trashNotes`,data,header)
+  }
+
 }
 
 export default UserService

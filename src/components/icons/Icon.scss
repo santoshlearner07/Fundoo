@@ -4,6 +4,11 @@
     justify-content: space-around;
 }
 
+.popOverIcon{
+    // display: grid;
+    // grid-template-columns: repeat(4,1fr);
+}
+
 .colorPallets{
     // display: flex;
     display: grid;
@@ -12,6 +17,7 @@
     height: 35px;
     border-radius: 20px;
     margin: 0.5vh 0vw;
+    // align-items: center;
 }
 
 .iconColorss{

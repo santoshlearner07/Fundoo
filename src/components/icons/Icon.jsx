@@ -9,6 +9,7 @@ import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
+import UserService from "../../services/userService";
 import IconColor from "../colors/IconColor";
 
 
@@ -25,6 +26,7 @@ let colorssss = [
     "#fdcfe8", "#e6c9a8", "#e8eaed", "#aecbfa"
 ]
 
+const uService = new UserService();
 
 export class Icon extends Component {
 
@@ -51,7 +53,64 @@ export class Icon extends Component {
     }
 
     updateColor = (colorValue) => {
+        console.log("In")
+        if(this.mode === "create"){
+            console.log("in if")
         this.props.changeColor(colorValue)
+        } 
+        else{
+            console.log("in else")
+            // update-part
+            let data ={
+                "noteIdList":[this.props.noteId],
+                "color":colorValue
+            }
+            uService.colorChange(data)
+            .then(res =>{
+                console.log(res)
+            })
+            .catch(err =>{
+                console.log( "U have an Error ->" + err)
+            })
+        }
+    }
+
+    useArchive=()=>{
+        console.log("Archeive")
+        if(this.mode === "create"){
+        this.props.changeArchive(true)
+        }
+        else{
+            console.log("in else")
+            // update-part
+            let data ={
+                "noteIdList":[this.props.noteId],
+                "isArchived": true
+            }
+            uService.changeArchive(data)
+            .then(res =>{
+                console.log(res)
+            })
+            .catch(err =>{
+                console.log( "U have an Error ->" + err)
+            })
+        }
+    }
+
+    handleMore =() =>{
+        console.log("Delete")
+            // delete-part
+            let data ={
+                "noteIdList":[this.props.noteId],
+                "isDeleted": false
+            }
+            uService.deleteNote(data)
+            .then(res =>{
+                console.log(res)
+            })
+            .catch(err =>{
+                console.log( "U have an Error ->" + err)
+            })
     }
 
     handleCloseMore = () => {
@@ -64,12 +123,6 @@ export class Icon extends Component {
             color1: false
         })
     }
-
-    useArchive=()=>{
-        console.log("Archeive")
-        this.props.changeArchive(true)
-    }
-
     render() {
 
         //popover
@@ -79,10 +132,11 @@ export class Icon extends Component {
             <div className="iconsSecondC">
                 <IconButton><AddAlertOutlinedIcon /></IconButton>
                 <IconButton><PersonAddAltOutlinedIcon /></IconButton>
+
                 <div>
 
                     <IconButton><ColorLensOutlinedIcon onClick={(e) => this.handleOpenColor(e)} /></IconButton>
-                    <Popover
+                    <Popover className="popOverIcon"
                         id="simple-menu"
                         anchorEl={color1}
                         keepMounted
@@ -126,7 +180,7 @@ export class Icon extends Component {
                     >
                         {
                             More.map((more, index) => (
-                                <MenuItem onClick={this.handleCloseMore}>
+                                <MenuItem onClick={() =>this.handleMore(more)}>
                                     {more}
                                 </MenuItem>
                             ))

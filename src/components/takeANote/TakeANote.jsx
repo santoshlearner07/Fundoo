@@ -49,13 +49,6 @@ export class TakeANote extends Component {
 
     changeTakeClose = () => {
         console.log("thisIsTakeANote");
-       
-        // let data = {
-        //     "title": this.state.title,
-        //     "description": this.state.description,
-        //     "color" : this.state.color,
-        //     "isArchived":this.state.archive
-        // }
 
         const formData = new FormData();
         formData.append("title",this.state.title)
@@ -112,7 +105,7 @@ export class TakeANote extends Component {
                                 <div className="thirdPart">
                                     <div className="secondTitleIcon">
 
-                                        <Icon changeColor = {this.changeColor}  changeArchive={this.changeArchive}/>
+                                        <Icon changeColor = {this.changeColor} mode="create" changeArchive={this.changeArchive}/>
                                         
                                     </div>
                                     <button className="secondCButton" onClick={this.changeTakeClose}>Close</button>
