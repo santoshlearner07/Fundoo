@@ -16,7 +16,6 @@
     grid-gap: 10px;
     height: 1cm;
     width: 100%;
-    background-color: inherit;
     .displayBox{
         display: flex;
         flex-direction: column;
@@ -25,23 +24,19 @@
         box-shadow: -1px -1px 5px rgb(229, 226, 226),
         1px 1px 5px rgb(153, 150, 150);
         border-radius:8px;
-        background-color: inherit;
         .titleDescrip{
             display: flex;
             flex-direction: column;
             margin: 0vh 1vw;
+            // background-color: inherit;
         }
-        // input{
-        //     width: 100%;
-        //     height: 70px;
-        //     @include borderOut();
-        // }
             .displayThirdPart{
                 display: flex;
                 width: 100%;
                 justify-content: space-between;
                 align-items: center;
                 margin: 2vh 0vw;
+                // background-color: inherit;
                 .displayIcons{
                     margin: 0vh 1vw;
                     width: 100%;

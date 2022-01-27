@@ -9,8 +9,7 @@ import ColorLensOutlinedIcon from '@mui/icons-material/ColorLensOutlined';
 import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
-import UserService from "../../services/userService";
-import IconColor from "../colors/IconColor";
+import NoteService from "../../services/noteService";
 
 
 //poper
@@ -26,7 +25,7 @@ let colorssss = [
     "#fdcfe8", "#e6c9a8", "#e8eaed", "#aecbfa"
 ]
 
-const uService = new UserService();
+const noteService = new NoteService();
 
 export class Icon extends Component {
 
@@ -65,7 +64,7 @@ export class Icon extends Component {
                 "noteIdList":[this.props.noteId],
                 "color":colorValue
             }
-            uService.colorChange(data)
+            noteService.colorChange(data)
             .then(res =>{
                 console.log(res)
             })
@@ -87,7 +86,7 @@ export class Icon extends Component {
                 "noteIdList":[this.props.noteId],
                 "isArchived": true
             }
-            uService.changeArchive(data)
+            noteService.changeArchive(data)
             .then(res =>{
                 console.log(res)
             })
@@ -104,7 +103,7 @@ export class Icon extends Component {
                 "noteIdList":[this.props.noteId],
                 "isDeleted": false
             }
-            uService.deleteNote(data)
+            noteService.deleteNote(data)
             .then(res =>{
                 console.log(res)
             })

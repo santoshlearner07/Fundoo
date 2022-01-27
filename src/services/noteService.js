@@ -16,6 +16,18 @@ class NoteService {
     return service.postMethod(`${baseUrl}notes/addNotes`, data, headerConfig)
   }
 
+  colorChange(data){
+    return service.postMethod(`${baseUrl}notes/changesColorNotes`,data,headerConfig)
+  }
+
+  changeArchive(data){
+    return service.postMethod(`${baseUrl}notes/archiveNotes`,data,headerConfig)
+  }
+
+  deleteNote(data){
+    return service.postMethod(`${baseUrl}notes/trashNotes`,data,headerConfig)
+  }
+
   getNote() {
     return service.getMethod(`${baseUrl}notes/getNotesList`,headerConfig)
   }

@@ -45,11 +45,6 @@ const BootstrapDialogTitle = (props) => {
     );
 };
 
-// BootstrapDialogTitle.propTypes = {
-//     children: PropTypes.node,
-//     onClose: PropTypes.func.isRequired,
-// };
-
 export class DisplayNote extends Component {
     constructor(props) {
         super(props);
@@ -57,7 +52,8 @@ export class DisplayNote extends Component {
             open: false,
             title: this.props.noteArray.title,
             description: this.props.noteArray.description,
-            color: this.props.color
+            color: '#ffffff',
+            id: ' '
         }
     }
 
@@ -65,7 +61,8 @@ export class DisplayNote extends Component {
         this.setState({
             open: true,
             title: item.title,
-            description: item.description
+            description: item.description,
+            id: item.id
         })
         console.log(this.state.title)
     }
@@ -77,47 +74,49 @@ export class DisplayNote extends Component {
     }
 
     fetchOriginalName = (e) => {
-            this.setState({
-                [e.target.name]: e.target.value
-            })
-            console.log(e.target.value)
-        }
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+        console.log(e.target.value)
+    }
 
     render() {
         console.log("this is Display Note")
         return (
-            <div className='mainDisplay'>
-                {this.props.noteArray.map((item, index) => (
-                    <div className='displayBox' style={{backgroundColor: this.state.color}}>
-                        <div className='titleDescrip' onClick={() => this.handleOpenTitle(item)}>
+            <div className='mainDisplay' >
+                {
+                    this.props.noteArray.map((item, index) => (
+                        <div className='displayBox' style={{ backgroundColor: item.color }}>
+                            <div className='titleDescrip' onClick={() => this.handleOpenTitle(item)}>
 
-                            {item.title}<br></br>
-                            {item.description}<br></br>
+                                {item.title}<br></br>
+                                {item.description}<br></br>
 
-                        </div>
-                        <div className="displayThirdPart">
-                            <div className="displayIcons">
-                                
-                                <Icon mode="update"  noteId={item.id} />
+                            </div>
+                            <div className="displayThirdPart">
+                                <div className="displayIcons">
+
+                                    <Icon mode="update" noteId={item.id} />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))
+                }
                 <BootstrapDialog onClose={this.handleClose} aria-labelledby="customized-dialog-title" open={this.state.open}>
                     <div style={{ width: "100%", overflow: "hidden" }}>
                         <BootstrapDialogTitle id="customized-dialog-title" onClose={this.handleClose} >
 
-                                <input type="text" style={{ border: "none", outline: "none" }} value={this.state.title} name="title" onChange={(e) => this.fetchOriginalName(e)} />
+                            <input type="text" style={{ border: "none", outline: "none" }} value={this.state.title} name="title" onChange={(e) => this.fetchOriginalName(e)} />
 
                         </BootstrapDialogTitle>
                         <DialogContent>
 
-                                <input type="text" style={{ border: "none", outline: "none" }} value={this.state.description} name="description" onChange={(e) => this.fetchOriginalName(e)} />
+                            <input type="text" style={{ border: "none", outline: "none" }} value={this.state.description} name="description" onChange={(e) => this.fetchOriginalName(e)} />
 
                         </DialogContent>
                         <DialogContent className="close-Icon" >
 
-                            <Icon />
+                            <Icon mode="update" noteId={this.state.id} />
                             <Button autoFocus onClick={(title, description) => this.handleClose(title, description)}> Close </Button>
                         </DialogContent>
 
