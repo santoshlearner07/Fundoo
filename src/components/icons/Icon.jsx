@@ -53,7 +53,7 @@ export class Icon extends Component {
 
     updateColor = (colorValue) => {
         console.log("In")
-        if(this.mode === "create"){
+        if(this.props.mode === "create"){
             console.log("in if")
         this.props.changeColor(colorValue)
         } 
@@ -76,7 +76,7 @@ export class Icon extends Component {
 
     useArchive=()=>{
         console.log("Archeive")
-        if(this.mode === "create"){
+        if(this.props.mode === "create"){
         this.props.changeArchive(true)
         }
         else{

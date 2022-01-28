@@ -60,7 +60,7 @@ export class TakeANote extends Component {
             .then(res => {
                 console.log(res)
             this.props.updateNote();
-            this.props.updateDiplayNote();
+            // this.props.updateDiplayNote();
             // this.props.changeColor();
                 this.setState({
                     opeNote: true,

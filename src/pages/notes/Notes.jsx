@@ -32,6 +32,7 @@ export class Notes extends Component {
                 console.log(err)
             })
     }
+
     updateDiplayNote=()=>{
         noteService.getNote()
         .then(res =>{
@@ -58,5 +59,6 @@ export class Notes extends Component {
         )
     }
 }
+// useContext
 
 export default Notes
