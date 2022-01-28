@@ -18,12 +18,21 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import { styled, useTheme } from "@mui/material/styles";
 
+
+import {
+  BrowserRouter, Route, Switch
+} from 'react-router-dom';
+
+
 import '../dashboard/Dashboard.scss'
 import { TextField, Button } from "@material-ui/core";
 import TakeANote from "../../components/takeANote/TakeANote";
 import DisplayNote from "../../components/displayNote/DisplayNote";
 import Notes from "../notes/Notes";
 import keep from '../Assests/keep.png';
+import Archive from "../archive/Archive";
+import Trash from "../trash/Trash";
+
 
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
@@ -36,6 +45,8 @@ import ViewStreamOutlinedIcon from '@mui/icons-material/ViewStreamOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import { Router } from "react-router-dom";
+import { RouteTwoTone } from "@mui/icons-material";
 
 
 const drawerWidth = 240;
@@ -137,6 +148,20 @@ export default function MiniDrawer() {
     setOpen(!open);
   };
 
+  const iconClick = () => {
+    if (iconlist.iText === "notes") {
+      Router.push("/notes")
+    }
+    else if (iconlist.iText === "archive") {
+      Router.push("/archive")
+    }
+    else if (iconlist.iText === "trash") {
+      Router.push("/trash")
+    }
+    else{
+      console.log("page not found")
+    }
+  }
 
 
   return (
@@ -182,7 +207,7 @@ export default function MiniDrawer() {
 
           {/* <div className="iconName"> */}
           {iconlist.map((text, index) => (
-            <ListItem button key={text.iText}>
+            <ListItem button key={text.iText} onClick={() => iconClick(text.iText)}>
               <ListItemIcon>
 
                 {text.icons}
@@ -197,12 +222,19 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
+        <Typography paragraph>
+
+          <Switch>
+            <Route path="/notes" component={Notes} />
+            <Route path="/archive" component={Archive} />
+            <Route path="/trash" component={Trash} />
+            <Notes />
+            {/* <Archive /> */}
+            {/* <Trash /> */}
+          </Switch>
 
 
-
-        {/* <Typography paragraph> */}
-        <Notes />
-        {/* </Typography> */}
+        </Typography>
       </Box>
     </Box>
   );

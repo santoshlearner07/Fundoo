@@ -12,7 +12,7 @@
 .mainDisplay{
     // justify-content: center;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(6,1fr);
     grid-gap: 10px;
     height: 1cm;
     width: 100%;
@@ -53,4 +53,70 @@
 .close-Icon{
     display: flex;
     margin: 0vh -2vw;
+}
+
+@media screen and (max-width:1050px) {
+    .mainDisplay{
+        grid-template-columns: repeat(5,1fr);
+        width: 100%;
+    }
+    .displayBox{
+        width: 80%;
+        margin: 15px auto;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .mainDisplay{
+        grid-template-columns: repeat(4,1fr);
+        width: 100%;
+    }
+    .displayBox{
+        width: 80%;
+        margin: 15px auto;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .mainDisplay{
+        grid-template-columns: repeat(3,1fr);
+        width: 100%;
+    }
+    .displayBox{
+        width: 65%;
+        margin: 15px auto;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .mainDisplay{
+        grid-template-columns: repeat(3,1fr);
+        width: 100%;
+    }
+    .displayBox{
+        width: 68%;
+        margin: 15px auto;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .mainDisplay{
+        grid-template-columns: repeat(2,1fr);
+        width: 100%;
+    }
+    .displayBox{
+        width: 50%;
+        margin: 15px auto;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .mainDisplay{
+        grid-template-columns: repeat(1,1fr);
+        width: 100%;
+    }
+    .displayBox{
+        width: 35%;
+        margin: 15px auto;
+    }
 }

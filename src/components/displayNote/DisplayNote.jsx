@@ -54,7 +54,7 @@ export class DisplayNote extends Component {
             open: false,
             title: this.props.noteArray.title,
             description: this.props.noteArray.description,
-            color: '#ffffff',
+            color: '#e6c9a8',
             id: ' '
         }
     }
@@ -64,11 +64,18 @@ export class DisplayNote extends Component {
             open: true,
             title: item.title,
             description: item.description,
+            color: item.backgroundColor,
             id: item.id
         })
         console.log(this.state.title)
     }
 
+    // changeColor =(val) =>{
+    //     this.setState({
+    //         color: val
+    //     })
+    // }
+    
     handleClose = () => {
         // this.setState({
         //     open: false,
@@ -90,7 +97,7 @@ export class DisplayNote extends Component {
                     open: false,
                     title: '',
                     description: '',
-                    color : '#ffffff',
+                    color : '#e6c9a8',
                     archive: false
                 })
             })
@@ -129,21 +136,23 @@ export class DisplayNote extends Component {
                     ))
                 }
                 <BootstrapDialog onClose={this.handleClose} aria-labelledby="customized-dialog-title" open={this.state.open}>
-                    <div style={{ width: "100%", overflow: "hidden" }}>
-                        <BootstrapDialogTitle id="customized-dialog-title" onClose={this.handleClose} >
+                    <div style={{ width: "100%", overflow: "hidden",backgroundColor:this.state.color }}>
 
-                            <input type="text" style={{ border: "none", outline: "none" }} value={this.state.title} name="title" onChange={(e) => this.fetchOriginalName(e)} />
+                        <BootstrapDialogTitle id="customized-dialog-title" onClose={this.handleClose}>
+
+                            <input type="text" style={{ border: "none", outline: "none",backgroundColor:this.state.color }} value={this.state.title} name="title" onChange={(e) => this.fetchOriginalName(e)} />
 
                         </BootstrapDialogTitle>
                         <DialogContent>
 
-                            <input type="text" style={{ border: "none", outline: "none" }} value={this.state.description} name="description" onChange={(e) => this.fetchOriginalName(e)} />
+                            <input type="text" style={{ border: "none", outline: "none",backgroundColor:this.state.color }} value={this.state.description} name="description" onChange={(e) => this.fetchOriginalName(e)} />
 
                         </DialogContent>
                         <DialogContent className="close-Icon" >
 
-                            <Icon mode="update" noteId={this.state.id} />
+                            <Icon changeColor = {this.changeColor} mode="update" noteId={this.state.id} />
                             <Button autoFocus onClick={(title, description) => this.handleClose(title, description)}> Close </Button>
+
                         </DialogContent>
 
                     </div>

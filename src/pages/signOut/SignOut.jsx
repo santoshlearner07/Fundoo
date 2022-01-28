@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import IconButton from "@mui/material/IconButton";
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import { TextField, Button } from "@material-ui/core";
+import AccountCircleOutlined from '@mui/icons-material/AccountCircleOutlined';
+
+import '../signOut/SignOut.scss'
 
 export class SignOut extends Component {
   render() {
-    return ( 
-    <div>
-        <div>
-        <IconButton> <AccountCircleOutlinedIcon /></IconButton>
+    return (
+      <div className='signOutPageMain'>
+        <div className='pageSignOut'>
+          {/* <IconButton> */}
+            {/* <AccountCircleOutlined /> </IconButton> */}
         </div>
-        <div>Name</div>
-        <div>Email</div>
-        <div>Manage Ur google account</div>
-        <div></div>
-    </div>
+      </div>
     );
   }
 }

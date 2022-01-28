@@ -1,0 +1,20 @@
+html,body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    
+}
+.signOutPageMain{
+    margin: 10vh 10vw;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    .pageSignOut{
+       justify-items: center;
+       align-items: center;
+        background-color: yellow;
+        width: 40px;
+        height: 40px;
+    }
+}

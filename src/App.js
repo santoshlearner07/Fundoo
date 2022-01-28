@@ -11,6 +11,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 import { SignOut } from './pages/signOut/SignOut';
 import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 import useAuth from './services/Auth';
+import Archive from './pages/archive/Archive';
  
 function App() {
   // const [isAuth,login,logout] = useAuth(false)
@@ -22,6 +23,7 @@ function App() {
         <Route path='/forgot' component={Forgot} />
         <Route path='/resetpassword' component={Reset} />
         <Route path='/signout' component={SignOut} />
+        <Route path='/archi' component={Archive} />
         <ProtectedRoute Route path='/dashboard' component={Dashboard} />
         <Route path='*' component={() => "Error 404 Page Not Found"} />
       </Switch>

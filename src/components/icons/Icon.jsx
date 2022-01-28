@@ -117,11 +117,13 @@ export class Icon extends Component {
             anchorEl: false,
         })
     }
+
     handleCloseColor = () => {
         this.setState({
             color1: false
         })
     }
+    
     render() {
 
         //popover

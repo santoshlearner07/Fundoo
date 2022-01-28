@@ -68,7 +68,52 @@
     }
 }
 
+@media screen and (max-width:900px) {
+    .addnote-container{
+        .firstContainer{
+            display: flex;
+            width: 95%;
+        }
+    }
+}
 
+@media screen and (max-width:600px) {
+    .addnote-container{
+        .firstContainer{
+            display: flex;
+            width: 70%;
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .addnote-container{
+        .firstContainer{
+            display: flex;
+            width: 80%;
+        }
+    }
+}
+
+// @media screen and (max-width:450px) {
+//     .addnote-container{
+//         .firstContainer{
+//             display: flex;
+//             width: 50%;
+//         }
+//     }
+// }
+
+// @media screen and (max-width:350px) {
+//     .addnote-container{
+//         width: 100%;
+//         .firstContainer{
+//             display: flex;
+//             width: 200%;
+            
+//         }
+//     }
+// }
 
 
 

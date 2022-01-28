@@ -32,6 +32,14 @@ class NoteService {
     return service.getMethod(`${baseUrl}notes/getNotesList`,headerConfig)
   }
 
+  getArchiveNote(){
+    return service.getMethod(`${baseUrl}notes/getArchiveNotesList`,headerConfig)
+  }
+
+  getTrashNote(){
+    return service.getMethod(`${baseUrl}notes/getTrashNotesList`,headerConfig)
+  }
+
 }
 
 
