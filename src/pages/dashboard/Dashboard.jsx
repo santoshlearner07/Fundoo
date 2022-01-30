@@ -46,7 +46,7 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { Router } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router";
 
 
 const drawerWidth = 240;
@@ -153,20 +153,20 @@ export default function MiniDrawer() {
   const iconClick = (text) => {
     if (text.iText == "Notes") {
       console.log("This is Notes")
-      history.push("/dashboard/notes")
+      history.push("/notes")
       console.log("This is Notes-end")
     }
     else if (text.iText == "Archive") {
       console.log("This is Archive")
-      history.push("/dashboard/archive")
+      history.push("/archive")
       console.log("This is Archive-end")
     }
     else if (text.iText == "Bin") {
       history.push("/trash")
     }
-    // else {
-    //   console.log("page not found")
-    // }
+    else {
+      console.log("page not found")
+    }
   }
 
 
@@ -229,19 +229,15 @@ export default function MiniDrawer() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Typography paragraph>
-
-          {/* <Router> */}
+        {/* <Archive /> */}
           <BrowserRouter>
             <Switch>
-              <Route path="/" component={Notes} />
+              <Route path="/notes" component={Notes} />
               <Route path="/archive" component={Archive} />
               <Route path="/trash" component={Trash} />
               <Notes />
-              {/* <Archive /> */}
-              {/* <Trash /> */}
             </Switch>
           </BrowserRouter>
-          {/* </Router> */}
 
         </Typography>
       </Box>

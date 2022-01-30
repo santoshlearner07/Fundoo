@@ -26,9 +26,9 @@ function App() {
         <Route path='/resetpassword' component={Reset} />
         <Route path='/signout' component={SignOut} />
 
-        <Route path="/dashboard/notes" exact component={Notes} />
-        <Route path="/dashboard/archive" component={Archive} />
-        {/* <Route path="/trash" component={Trash} /> */}
+        <Route path="/notes" exact component={Notes} />
+        <Route path="/archive" component={Archive} />
+        <Route path="/trash" component={Trash} />
 
         <ProtectedRoute Route path='/dashboard' component={Dashboard} />
         <Route path='*' component={() => "Error 404 Page Not Found"} />

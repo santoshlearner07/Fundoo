@@ -54,8 +54,8 @@ export class DisplayNote extends Component {
             description: this.props.noteArray.description,
             color: '#ffffff',
             id:this.props.noteArray.id,
-            isArchive:false,
-            isDelete:false
+            archive:false,
+            delete:false
         }
     }
 
@@ -96,6 +96,7 @@ export class DisplayNote extends Component {
         formData.append("description", this.state.description)
         formData.append("color", this.state.color)
         formData.append("isArchived", this.state.archive)
+        formData.append("isDeleted", this.state.delete)
 
         noteService.getNote(formData)
             .then(res => {
@@ -106,7 +107,9 @@ export class DisplayNote extends Component {
                     title: ' ',
                     description: ' ',
                     color: '#ffffff',
-                    archive: false
+                    archive: false,
+                    delete:false
+                    
                 })
             })
             .catch(err => {
