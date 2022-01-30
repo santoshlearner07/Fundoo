@@ -12,18 +12,24 @@ import { SignOut } from './pages/signOut/SignOut';
 import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 import useAuth from './services/Auth';
 import Archive from './pages/archive/Archive';
- 
+import Notes from './pages/notes/Notes';
+import Trash from './pages/trash/Trash';
+
 function App() {
   // const [isAuth,login,logout] = useAuth(false)
   return (
     <BrowserRouter>
       <Switch>
         <Route path='/' component={Signup} exact />
-        <Route path='/signin' component={Signin}  />
+        <Route path='/signin' component={Signin} />
         <Route path='/forgot' component={Forgot} />
         <Route path='/resetpassword' component={Reset} />
         <Route path='/signout' component={SignOut} />
-        <Route path='/archi' component={Archive} />
+
+        <Route path="/dashboard/notes" exact component={Notes} />
+        <Route path="/dashboard/archive" component={Archive} />
+        {/* <Route path="/trash" component={Trash} /> */}
+
         <ProtectedRoute Route path='/dashboard' component={Dashboard} />
         <Route path='*' component={() => "Error 404 Page Not Found"} />
       </Switch>

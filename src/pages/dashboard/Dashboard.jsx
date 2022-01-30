@@ -46,7 +46,7 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { Router } from "react-router-dom";
-import { RouteTwoTone } from "@mui/icons-material";
+import { useHistory } from "react-router-dom";
 
 
 const drawerWidth = 240;
@@ -118,6 +118,7 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export default function MiniDrawer() {
+  const history = useHistory();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -148,19 +149,24 @@ export default function MiniDrawer() {
     setOpen(!open);
   };
 
-  const iconClick = () => {
-    if (iconlist.iText === "notes") {
-      Router.push("/notes")
+
+  const iconClick = (text) => {
+    if (text.iText == "Notes") {
+      console.log("This is Notes")
+      history.push("/dashboard/notes")
+      console.log("This is Notes-end")
     }
-    else if (iconlist.iText === "archive") {
-      Router.push("/archive")
+    else if (text.iText == "Archive") {
+      console.log("This is Archive")
+      history.push("/dashboard/archive")
+      console.log("This is Archive-end")
     }
-    else if (iconlist.iText === "trash") {
-      Router.push("/trash")
+    else if (text.iText == "Bin") {
+      history.push("/trash")
     }
-    else{
-      console.log("page not found")
-    }
+    // else {
+    //   console.log("page not found")
+    // }
   }
 
 
@@ -207,7 +213,7 @@ export default function MiniDrawer() {
 
           {/* <div className="iconName"> */}
           {iconlist.map((text, index) => (
-            <ListItem button key={text.iText} onClick={() => iconClick(text.iText)}>
+            <ListItem button key={text.iText} onClick={() => iconClick(text)}>
               <ListItemIcon>
 
                 {text.icons}
@@ -224,15 +230,18 @@ export default function MiniDrawer() {
         <DrawerHeader />
         <Typography paragraph>
 
-          <Switch>
-            <Route path="/notes" component={Notes} />
-            <Route path="/archive" component={Archive} />
-            <Route path="/trash" component={Trash} />
-            <Notes />
-            {/* <Archive /> */}
-            {/* <Trash /> */}
-          </Switch>
-
+          {/* <Router> */}
+          <BrowserRouter>
+            <Switch>
+              <Route path="/" component={Notes} />
+              <Route path="/archive" component={Archive} />
+              <Route path="/trash" component={Trash} />
+              <Notes />
+              {/* <Archive /> */}
+              {/* <Trash /> */}
+            </Switch>
+          </BrowserRouter>
+          {/* </Router> */}
 
         </Typography>
       </Box>

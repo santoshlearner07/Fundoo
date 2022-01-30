@@ -17,14 +17,15 @@ export class Notes extends Component {
 
     componentDidMount() {
         this.updateNote();
-        this.updateDiplayNote();
     }
 
     updateNote = () => {
         noteService.getNote()
             .then((res) => {
+                let filterData = res.data.data.data.filter(x => x.isArchived !== true && x.isDeleted !== true)
                 this.setState({
-                    noteArr: res.data.data.data
+                    // noteArr: res.data.data.data
+                    noteArr : filterData
                 })
                 console.log(this.state.noteArr)
             })
@@ -33,27 +34,13 @@ export class Notes extends Component {
             })
     }
 
-    updateDiplayNote=()=>{
-        noteService.getNote()
-        .then(res =>{
-            console.log("datdatdat In")
-            this.setState({
-                noteArr:res.data.data.data
-            })
-            console.log("datdatdat out")
-            console.log(res)
-        })
-        .catch(err =>{
-            console.log(err)
-        })
-    }
-
     render() {
+        console.log("new filter Data",this.state.noteArr)
         return (
             <div>
                 <div className="notesBox">
                     <TakeANote updateNote={this.updateNote} /> <br></br>
-                    <DisplayNote noteArray={this.state.noteArr} updateDiplayNote={this.updateDiplayNote}/>
+                    <DisplayNote noteArray={this.state.noteArr} updateNote={this.updateNote}/>
                 </div>
             </div>
         )

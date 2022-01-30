@@ -7,7 +7,7 @@ export class Trash extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            noteArr: []
+            trashNoteArray: []
         }
     }
 
@@ -21,9 +21,9 @@ export class Trash extends Component {
             .then(res => {
                 console.log("datdatdat In")
                 this.setState({
-                    noteArr: res.data.data.data
+                    trashNoteArray: res.data.data.data
                 })
-                console.log("datdatdat out")
+                console.log("datdatdat out" + this.state.trashNoteArray)
                 console.log(res)
             })
             .catch(err => {
@@ -31,8 +31,9 @@ export class Trash extends Component {
             })
     }
     render() {
+        console.log("Trash Note")
         return <div>
-            <DisplayNote noteArr={this.state.noteArr} updateTrashNote={this.updateTrashNote} />
+            <DisplayNote noteArr={this.state.trashNoteArray} updateNote={this.updateTrashNote} />
         </div>;
     }
 }

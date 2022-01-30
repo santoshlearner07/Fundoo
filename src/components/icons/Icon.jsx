@@ -67,6 +67,8 @@ export class Icon extends Component {
             noteService.colorChange(data)
             .then(res =>{
                 console.log(res)
+                this.props.changeColor(colorValue)
+                this.props.updateNote()
             })
             .catch(err =>{
                 console.log( "U have an Error ->" + err)
@@ -89,6 +91,7 @@ export class Icon extends Component {
             noteService.changeArchive(data)
             .then(res =>{
                 console.log(res)
+                this.props.updateNote()
             })
             .catch(err =>{
                 console.log( "U have an Error ->" + err)
@@ -106,6 +109,7 @@ export class Icon extends Component {
             noteService.deleteNote(data)
             .then(res =>{
                 console.log(res)
+                this.props.updateNote()
             })
             .catch(err =>{
                 console.log( "U have an Error ->" + err)

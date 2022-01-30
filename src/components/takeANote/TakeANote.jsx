@@ -3,16 +3,12 @@ import { Button } from "@material-ui/core";
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import PhotoOutlinedIcon from '@mui/icons-material/PhotoOutlined';
-// import UserService from "../../services/userService";
 import NoteService from "../../services/noteService";
 
 import Icon from "../icons/Icon";
 import '../takeANote/TakeANote.scss'
 
 import IconButton from '@mui/material/IconButton';
-
-
-
 const noteService = new NoteService();
 
 export class TakeANote extends Component {
@@ -25,7 +21,9 @@ export class TakeANote extends Component {
             title: '',
             description: '',
             color: '#ffffff',
-            archive: false
+            archive: false,
+            id:' ',
+            delete: false
         }
     }
 
@@ -55,19 +53,20 @@ export class TakeANote extends Component {
         formData.append("description",this.state.description)
         formData.append("color",this.state.color)
         formData.append("isArchived",this.state.archive)
+        formData.append("isDeleted",this.state.delete)
 
         noteService.addNote(formData)
             .then(res => {
                 console.log(res)
             this.props.updateNote();
-            // this.props.updateDiplayNote();
             // this.props.changeColor();
                 this.setState({
                     opeNote: true,
-                    title: '',
-                    description: '',
+                    title: ' ',
+                    description: ' ',
                     color : '#ffffff',
-                    archive: false
+                    archive: false,
+                    delete: false
                 })
             })
             .catch(err => {
@@ -106,11 +105,10 @@ export class TakeANote extends Component {
                                 <div className="thirdPart">
                                     <div className="secondTitleIcon">
 
-                                        <Icon changeColor = {this.changeColor} mode="create" changeArchive={this.changeArchive}/>
+                                        <Icon changeColor = {this.changeColor} mode="create" noteId={this.state.id} changeArchive={this.changeArchive}/>
                                         
                                     </div>
                                     <button className="secondCButton" onClick={this.changeTakeClose}>Close</button>
-                                    {/* <Button className="secondCButton" variant="text" onClick={this.changeTakeClose}>Close</Button> */}
                                 </div>
                             </div>
                         }
