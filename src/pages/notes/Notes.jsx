@@ -25,7 +25,6 @@ export class Notes extends Component {
             .then((res) => {
                 let filterData = res.data.data.data.filter(value => value.isArchived !== true && value.isDeleted !== true)
                 this.setState({
-                    // noteArr: res.data.data.data
                     noteArr : filterData
                 })
                 console.log(this.state.noteArr)
