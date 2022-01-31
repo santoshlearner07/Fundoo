@@ -53,67 +53,71 @@ export class Icon extends Component {
 
     updateColor = (colorValue) => {
         console.log("In")
-        if(this.props.mode === "create"){
+        if (this.props.mode === "create") {
             console.log("in if")
-        this.props.changeColor(colorValue)
-        } 
-        else{
+            this.props.changeColor(colorValue)
+        }
+        else {
             console.log("in else")
             // update-part
-            let data ={
-                "noteIdList":[this.props.noteId],
-                "color":colorValue
+            let data = {
+                "noteIdList": [this.props.noteId],
+                "color": colorValue
             }
             noteService.colorChange(data)
-            .then(res =>{
-                console.log(res)
-                this.props.changeColor(colorValue)
-                this.props.updateNote()
-            })
-            .catch(err =>{
-                console.log( "U have an Error ->" + err)
-            })
+                .then(res => {
+                    console.log(res)
+                    this.props.changeColor(colorValue)
+                    this.props.updateNote()
+                })
+                .catch(err => {
+                    console.log("U have an Error ->" + err)
+                })
         }
     }
 
-    useArchive=()=>{
+    useArchive = () => {
         console.log("Archeive")
-        if(this.props.mode === "create"){
-        this.props.changeArchive(true)
+        if (this.props.mode === "create") {
+            this.props.changeArchive(true)
         }
-        else{
+        else {
             console.log("in else")
             // update-part
-            let data ={
-                "noteIdList":[this.props.noteId],
+            let data = {
+                "noteIdList": [this.props.noteId],
                 "isArchived": true
             }
             noteService.changeArchive(data)
-            .then(res =>{
-                console.log(res)
-                this.props.updateNote()
-            })
-            .catch(err =>{
-                console.log( "U have an Error ->" + err)
-            })
+                .then(res => {
+                    console.log(res)
+                    this.props.updateNote()
+                })
+                .catch(err => {
+                    console.log("U have an Error ->" + err)
+                })
         }
     }
 
-    handleMore =() =>{
+    handleMore = () => {
         console.log("Delete")
-            // delete-part
-            let data ={
-                "noteIdList":[this.props.noteId],
+        // delete-part
+        if (this.props.mode === "create") {
+            this.props.changeDelete(true)
+        } else {
+            let data = {
+                "noteIdList": [this.props.noteId],
                 "isDeleted": true
             }
             noteService.deleteNote(data)
-            .then(res =>{
-                console.log(res)
-                this.props.updateNote()
-            })
-            .catch(err =>{
-                console.log( "U have an Error ->" + err)
-            })
+                .then(res => {
+                    console.log(res)
+                    this.props.updateNote()
+                })
+                .catch(err => {
+                    console.log("U have an Error ->" + err)
+                })
+        }
     }
 
     handleCloseMore = () => {
@@ -127,7 +131,7 @@ export class Icon extends Component {
             color1: false
         })
     }
-    
+
     render() {
 
         //popover
@@ -141,9 +145,9 @@ export class Icon extends Component {
                 <div>
 
                     <IconButton><ColorLensOutlinedIcon onClick={(e) => this.handleOpenColor(e)} /></IconButton>
-                    <Popover 
-                    style={{display: 'flex'}}
-                    // className="popOverIcon"
+                    <Popover
+                        style={{ display: 'flex' }}
+                        // className="popOverIcon"
                         id="simple-menu"
                         anchorEl={color1}
                         keepMounted
@@ -169,7 +173,7 @@ export class Icon extends Component {
 
                 <IconButton><PhotoOutlinedIcon /></IconButton>
                 <div>
-                    <IconButton><ArchiveOutlinedIcon onClick={(e) => this.useArchive(e)}/></IconButton>
+                    <IconButton><ArchiveOutlinedIcon onClick={(e) => this.useArchive(e)} /></IconButton>
                 </div>
                 <div>
                     <IconButton> <MoreVertOutlinedIcon onClick={(e) => this.handleOpenMore(e)} /> </IconButton>
@@ -187,7 +191,7 @@ export class Icon extends Component {
                     >
                         {
                             More.map((more, index) => (
-                                <MenuItem onClick={() =>this.handleMore(more)}>
+                                <MenuItem onClick={() => this.handleMore(more)}>
                                     {more}
                                 </MenuItem>
                             ))
