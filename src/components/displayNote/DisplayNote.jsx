@@ -52,6 +52,8 @@ export class DisplayNote extends Component {
             open: false,
             title: this.props.noteArray.title,
             description: this.props.noteArray.description,
+            // title: this.noteArray.title,
+            // description: this.noteArray.description,
             color: '#ffffff',
             id:this.props.noteArray.id,
             archive:false,

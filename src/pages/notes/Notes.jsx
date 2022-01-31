@@ -35,7 +35,7 @@ export class Notes extends Component {
     }
 
     render() {
-        console.log("new filter Data")
+        console.log("In note")
         return (
             <div>
                 <div className="notesBox">

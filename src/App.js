@@ -8,12 +8,12 @@ import Signin from './pages/signin/Signin';
 import { Forgot } from './pages/forgotPassword/Forgot';
 import Reset from './pages/reset/Reset';
 import Dashboard from './pages/dashboard/Dashboard';
-import { SignOut } from './pages/signOut/SignOut';
 import ProtectedRoute from './components/protectedRoute/ProtectedRoute';
 import useAuth from './services/Auth';
 import Archive from './pages/archive/Archive';
 import Notes from './pages/notes/Notes';
 import Trash from './pages/trash/Trash';
+import SignOut from './pages/signOut/SignOut';
 
 function App() {
   // const [isAuth,login,logout] = useAuth(false)
@@ -24,7 +24,7 @@ function App() {
         <Route path='/signin' component={Signin} />
         <Route path='/forgot' component={Forgot} />
         <Route path='/resetpassword' component={Reset} />
-        <Route path='/signout' component={SignOut} />
+        <Route path='/profile' component={SignOut} />
 
         <Route path="/notes" exact component={Notes} />
         <Route path="/archive" component={Archive} />

@@ -32,6 +32,8 @@ import Notes from "../notes/Notes";
 import keep from '../Assests/keep.png';
 import Archive from "../archive/Archive";
 import Trash from "../trash/Trash";
+import SignOut from "../signOut/SignOut";
+
 
 
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -45,6 +47,7 @@ import ViewStreamOutlinedIcon from '@mui/icons-material/ViewStreamOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import { Popover } from '@material-ui/core';
 import { Router } from "react-router-dom";
 import { useHistory } from "react-router";
 
@@ -169,6 +172,9 @@ export default function MiniDrawer() {
     }
   }
 
+ const profile=(e)=>{
+
+  }
 
   return (
     <Box sx={{ display: "flex" }}>
@@ -198,7 +204,9 @@ export default function MiniDrawer() {
                 <IconButton> <ViewStreamOutlinedIcon /> </IconButton>
                 <IconButton> <SettingsOutlinedIcon /></IconButton>
                 <IconButton> <AppsOutlinedIcon /></IconButton>
-                <IconButton> <AccountCircleOutlinedIcon /></IconButton>
+                <div>
+                  <SignOut />
+                </div>
               </ul>
             </div>
 
@@ -229,7 +237,7 @@ export default function MiniDrawer() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Typography paragraph>
-        {/* <Archive /> */}
+          {/* <Archive /> */}
           <BrowserRouter>
             <Switch>
               <Route path="/notes" component={Notes} />
