@@ -94,11 +94,11 @@ export class DisplayNote extends Component {
         const formData = new FormData();
         formData.append("title", this.state.title)
         formData.append("description", this.state.description)
-        formData.append("color", this.state.color)
-        formData.append("isArchived", this.state.archive)
-        formData.append("isDeleted", this.state.delete)
+        formData.append("noteId", this.state.id)
+        // formData.append("isArchived", this.state.archive)
+        // formData.append("isDeleted", this.state.delete)
 
-        noteService.getNote(formData)
+        noteService.getUpdatedNote(formData)
             .then(res => {
                 console.log(res)
                 this.props.updateNote();
@@ -106,9 +106,9 @@ export class DisplayNote extends Component {
                     open: false,
                     title: ' ',
                     description: ' ',
-                    color: '#ffffff',
-                    archive: false,
-                    delete:false
+                    id: ' ',
+                    // archive: false,
+                    // delete:false
                     
                 })
             })
@@ -160,7 +160,7 @@ export class DisplayNote extends Component {
                                 <input type="text" style={{ border: "none", outline: "none", backgroundColor: this.state.color }} value={this.state.description} name="description" onChange={(e) => this.fetchOriginalName(e)} />
 
                             </DialogContent>
-                            <DialogContent className="close-Icon" >
+                            <DialogContent className="close-Icon">
 
                                 <Icon mode="update" noteId={this.state.id} updateNote={this.props.updateNote}
                                 changeColor={this.changeColor} changeArchive={this.changeArchive} changeDelete={this.changeDelete}/>

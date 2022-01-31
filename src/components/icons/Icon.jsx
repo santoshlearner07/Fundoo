@@ -104,7 +104,7 @@ export class Icon extends Component {
             // delete-part
             let data ={
                 "noteIdList":[this.props.noteId],
-                "isDeleted": false
+                "isDeleted": true
             }
             noteService.deleteNote(data)
             .then(res =>{
