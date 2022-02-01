@@ -3,7 +3,7 @@ import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import IconButton from "@mui/material/IconButton";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import '../signOut/SignOut'
+import '../signOut/SignOut.scss'
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
@@ -21,12 +21,12 @@ export default function SignOut() {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
-const signOut =() =>{
-    localStorage.removeItem('token')
-    localStorage.removeItem("email")
-    localStorage.removeItem("firstName")
-    localStorage.removeItem("lastName")
-}
+    const signOut = () => {
+        localStorage.removeItem('token')
+        localStorage.removeItem("email")
+        localStorage.removeItem("firstName")
+        localStorage.removeItem("lastName")
+    }
 
     return (
         <div className='signOut-page'>
@@ -45,10 +45,19 @@ const signOut =() =>{
             >
                 <Typography sx={{ p: 2 }} >
                     <div className='userDetail'>
+
                         <div className='userName' >
-                            <p> {localStorage.getItem("firstName")}
-                                {localStorage.getItem("lastName")}</p>
-                            <p>  {localStorage.getItem("email")}</p>
+                            <div className="fundoo">
+                                <p style={{ color: 'blue' }} >F</p>
+                                <p style={{ color: 'red' }}>u</p>
+                                <p style={{ color: 'yellow' }}>n</p>
+                                <p style={{ color: 'blue' }}>d</p>
+                                <p style={{ color: 'green' }}>o</p>
+                                <p style={{ color: 'red' }}>o</p>
+                            </div>
+                            <p className='nameDetail'>{localStorage.getItem("firstName")} {' '}
+                                {localStorage.getItem("lastName")} </p>
+                            <p className='emailDetail'>  {localStorage.getItem("email")}</p>
                         </div>
                         <div>
                             <Link to="/signin"> <Button className='signOut' onClick={signOut}>Sign Out</Button> </Link>
