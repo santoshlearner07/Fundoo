@@ -38,9 +38,6 @@ import RefreshOutlinedIcon from '@mui/icons-material/RefreshOutlined';
 import ViewStreamOutlinedIcon from '@mui/icons-material/ViewStreamOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import { Popover } from '@material-ui/core';
-import { Router } from "react-router-dom";
 import { useHistory } from "react-router";
 
 

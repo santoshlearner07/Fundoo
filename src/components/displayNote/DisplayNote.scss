@@ -76,7 +76,7 @@
     }
 }
 
-@media screen and (max-width:750px) {
+@media screen and (max-width:850px) {
     .mainDisplay{
         grid-template-columns: repeat(3,1fr);
         width: 100%;
@@ -109,7 +109,7 @@
     }
 }
 
-@media screen and (max-width:375px) {
+@media screen and (max-width:420px) {
     .mainDisplay{
         grid-template-columns: repeat(1,1fr);
         width: 100%;
@@ -117,5 +117,23 @@
     .displayBox{
         width: 40%;
         margin: 10px auto;
+        
+    }
+}
+
+@media screen and (max-width:420px){
+    // .css-sa04fg-MuiModal-root-MuiDialog-root .MuiDialogContent-root{
+    //     background-color: yellow;
+    //     padding: 16px;
+    //     width :50px,
+    // }
+    .close-Icon{
+        background-color: yellow;
+        justify-content: center;
+        display: flex;
+        width: 50%;
+        .icon-2{
+            background-color: gray;
+        }
     }
 }

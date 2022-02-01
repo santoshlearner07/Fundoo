@@ -66,7 +66,7 @@ export class DisplayNote extends Component {
             open: true,
             title: item.title,
             description: item.description,
-            // color: item.backgroundColor,
+            color: item.backgroundColor,
             id: item.id
         })
     }
