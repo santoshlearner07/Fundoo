@@ -5,6 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import '../signOut/SignOut'
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
 
 export default function SignOut() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -44,7 +45,7 @@ export default function SignOut() {
                             santoshwalker719@gmail.com
                         </div>
                         <div>
-                            <Button className='signOut'>Sign Out</Button>
+                            <Link to="/signin"> <Button className='signOut'>Sign Out</Button> </Link>
                         </div>
                     </div>
                 </Typography>

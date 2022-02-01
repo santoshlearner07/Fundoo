@@ -6,16 +6,11 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { styled, useTheme } from "@mui/material/styles";
 
 
@@ -25,9 +20,6 @@ import {
 
 
 import '../dashboard/Dashboard.scss'
-import { TextField, Button } from "@material-ui/core";
-import TakeANote from "../../components/takeANote/TakeANote";
-import DisplayNote from "../../components/displayNote/DisplayNote";
 import Notes from "../notes/Notes";
 import keep from '../Assests/keep.png';
 import Archive from "../archive/Archive";
@@ -86,7 +78,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open"
 })(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
   backgroundColor: 'white',
   boxShadow: "0px",
   color: "black",
@@ -106,10 +97,12 @@ const AppBar = styled(MuiAppBar, {
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open"
 })(({ theme, open }) => ({
-  width: drawerWidth,
-  flexShrink: 0,
+  // width: drawerWidth,
+  flexShrink: 10,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
+  zIndex: 10,
+
   ...(open && {
     ...openedMixin(theme),
     "& .MuiDrawer-paper": openedMixin(theme)
@@ -172,10 +165,6 @@ export default function MiniDrawer() {
     }
   }
 
- const profile=(e)=>{
-
-  }
-
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -213,10 +202,10 @@ export default function MiniDrawer() {
           </div>
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} >
         <DrawerHeader>
         </DrawerHeader>
-        <Divider />
+        {/* <Divider /> */}
         <List>
 
           {/* <div className="iconName"> */}
