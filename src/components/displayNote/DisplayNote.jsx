@@ -12,8 +12,27 @@ const noteService = new NoteService();
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
-        padding: theme.spacing(2),
-        width: theme.spacing(80)
+        // padding: theme.spacing(2),
+        width: theme.spacing(80),
+        [theme.breakpoints.up(1000)]:{
+        width: theme.spacing(90),
+        margin: theme.spacing(2)
+        },
+        [theme.breakpoints.up(750)]:{
+        width: theme.spacing(60),
+        },
+        [theme.breakpoints.up(600)]:{
+        width: theme.spacing(50),
+        },
+        [theme.breakpoints.up(500)]:{
+        width: theme.spacing(40),
+        },
+        [theme.breakpoints.up(400)]:{
+        width: theme.spacing(40),
+        },
+        [theme.breakpoints.up(300)]:{
+        width: theme.spacing(40),
+        }
     },
     '& .MuiDialogActions-root': {
         padding: theme.spacing(1),

@@ -21,6 +21,13 @@ export default function SignOut() {
     const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
+const signOut =() =>{
+    localStorage.removeItem('token')
+    localStorage.removeItem("email")
+    localStorage.removeItem("firstName")
+    localStorage.removeItem("lastName")
+}
+
     return (
         <div className='signOut-page'>
             <IconButton aria-describedby={id} onClick={handleClick} style={{ backgroundColor: 'white' }}>
@@ -39,13 +46,12 @@ export default function SignOut() {
                 <Typography sx={{ p: 2 }} >
                     <div className='userDetail'>
                         <div className='userName' >
-                            Santosh Nandiyawar
-                        </div>
-                        <div className='userEmail'>
-                            santoshwalker719@gmail.com
+                            <p> {localStorage.getItem("firstName")}
+                                {localStorage.getItem("lastName")}</p>
+                            <p>  {localStorage.getItem("email")}</p>
                         </div>
                         <div>
-                            <Link to="/signin"> <Button className='signOut'>Sign Out</Button> </Link>
+                            <Link to="/signin"> <Button className='signOut' onClick={signOut}>Sign Out</Button> </Link>
                         </div>
                     </div>
                 </Typography>

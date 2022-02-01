@@ -57,8 +57,11 @@ export class Signin extends Component {
                 .then(res => {
                     console.log(res)
                     localStorage.setItem('token', res.data.id)
-                    // localStorage.setItem('token', res.data.email)
-                    // this.props.history.push("/dashboard")
+                    localStorage.setItem("firstName",res.data.firstName);
+                    localStorage.setItem("lastName",res.data.lastName);
+                    localStorage.setItem("email",res.data.email);
+
+                    window.location.href="http://localhost:4200/Dashboard";
                 })
                 .catch(err => {
                     console.log(err)

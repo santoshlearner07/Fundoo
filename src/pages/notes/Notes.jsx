@@ -1,3 +1,4 @@
+import { Title } from "@mui/icons-material";
 import React, { Component } from "react";
 import DisplayNote from "../../components/displayNote/DisplayNote";
 import TakeANote from "../../components/takeANote/TakeANote";
@@ -19,6 +20,13 @@ export class Notes extends Component {
     componentDidMount() {
         this.updateNote();
     }
+
+    // searchNotes = () =>{
+    //     let filterData = noteArr.filter(value => value.isArchived !== true && value.isDeleted !== true)
+    //         this.setState({
+    //             noteArr : filterData
+    //         })
+    // }
 
     updateNote = () => {
         noteService.getNote()

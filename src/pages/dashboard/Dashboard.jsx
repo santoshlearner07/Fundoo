@@ -113,6 +113,7 @@ const Drawer = styled(MuiDrawer, {
 export default function MiniDrawer() {
   const history = useHistory();
   const theme = useTheme();
+  const [search, setSearch] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
   let iconlist = [
@@ -162,6 +163,10 @@ export default function MiniDrawer() {
     }
   }
 
+const searchContent =(e) =>{
+  setSearch(e.target.value)
+}
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -182,7 +187,9 @@ export default function MiniDrawer() {
             </Typography>
             <div className="searchBar">
               <SearchOutlinedIcon />
-              <input className="search" type="text" placeholder="Search"></input>
+              <input className="search" type="text" placeholder="Search" 
+              onChange={(e)=>searchContent(e)}
+              ></input>
             </div>
             <div className="headBar">
               <ul className="headerIcon">
