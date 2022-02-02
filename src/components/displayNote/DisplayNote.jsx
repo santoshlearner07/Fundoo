@@ -12,7 +12,6 @@ const noteService = new NoteService();
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
-        // padding: theme.spacing(2),
         width: theme.spacing(80),
         [theme.breakpoints.up(1000)]:{
         width: theme.spacing(90),
@@ -57,7 +56,6 @@ const BootstrapDialogTitle = (props) => {
                         color: (theme) => theme.palette.grey[500],
                     }}
                 >
-                    {/* <CloseIcon /> */}
                 </IconButton>
             ) : null}
         </DialogTitle>
@@ -71,8 +69,6 @@ export class DisplayNote extends Component {
             open: false,
             title: this.props.noteArray.title,
             description: this.props.noteArray.description,
-            // title: this.noteArray.title,
-            // description: this.noteArray.description,
             color: '#ffffff',
             id:this.props.noteArray.id,
             archive:false,
@@ -105,7 +101,6 @@ export class DisplayNote extends Component {
     changeDelete = (val) => {
         this.setState({
             handleMore: val
-            // chngge name of handleMore to delete
         })
     }
 
@@ -116,8 +111,6 @@ export class DisplayNote extends Component {
         formData.append("title", this.state.title)
         formData.append("description", this.state.description)
         formData.append("noteId", this.state.id)
-        // formData.append("isArchived", this.state.archive)
-        // formData.append("isDeleted", this.state.delete)
 
         noteService.getUpdatedNote(formData)
             .then(res => {
@@ -128,9 +121,6 @@ export class DisplayNote extends Component {
                     title: ' ',
                     description: ' ',
                     id: ' ',
-                    // archive: false,
-                    // delete:false
-                    
                 })
             })
             .catch(err => {

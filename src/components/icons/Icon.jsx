@@ -11,11 +11,8 @@ import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import NoteService from "../../services/noteService";
 
-
-//poper
 import MenuItem from '@material-ui/core/MenuItem';
 import { Popover } from '@material-ui/core';
-
 
 let More = ["Delete note", "Add label", "Add drawing", "Make a copy", "Show tick boxes"]
 
@@ -33,13 +30,11 @@ export class Icon extends Component {
         super(props);
 
         this.state = {
-            // popover
             anchorEl: false,
             color1: false
         }
     }
 
-    //popover
     handleOpenMore = (e) => {
         this.setState({
             anchorEl: e.currentTarget,
@@ -52,14 +47,10 @@ export class Icon extends Component {
     }
 
     updateColor = (colorValue) => {
-        console.log("In")
         if (this.props.mode === "create") {
-            console.log("in if")
             this.props.changeColor(colorValue)
         }
         else {
-            console.log("in else")
-            // update-part
             let data = {
                 "noteIdList": [this.props.noteId],
                 "color": colorValue
@@ -77,13 +68,10 @@ export class Icon extends Component {
     }
 
     useArchive = () => {
-        console.log("Archeive")
         if (this.props.mode === "create") {
             this.props.changeArchive(true)
         }
         else {
-            console.log("in else")
-            // update-part
             let data = {
                 "noteIdList": [this.props.noteId],
                 "isArchived": true
@@ -100,8 +88,6 @@ export class Icon extends Component {
     }
 
     handleMore = () => {
-        console.log("Delete")
-        // delete-part
         if (this.props.mode === "create") {
             this.props.changeDelete(true)
         } else {
@@ -133,8 +119,6 @@ export class Icon extends Component {
     }
 
     render() {
-
-        //popover
         const { anchorEl, color1 } = this.state
 
         return (
@@ -147,7 +131,6 @@ export class Icon extends Component {
                     <IconButton><ColorLensOutlinedIcon onClick={(e) => this.handleOpenColor(e)} /></IconButton>
                     <Popover
                         style={{ display: 'flex' }}
-                        // className="popOverIcon"
                         id="simple-menu"
                         anchorEl={color1}
                         keepMounted

@@ -21,13 +21,6 @@ export class Notes extends Component {
         this.updateNote();
     }
 
-    // searchNotes = () =>{
-    //     let filterData = noteArr.filter(value => value.isArchived !== true && value.isDeleted !== true)
-    //         this.setState({
-    //             noteArr : filterData
-    //         })
-    // }
-
     updateNote = () => {
         noteService.getNote()
             .then((res) => {
@@ -35,7 +28,6 @@ export class Notes extends Component {
                 this.setState({
                     noteArr : filterData
                 })
-                console.log(this.state.noteArr)
             })
             .catch((err) => {
                 console.log(err)
@@ -43,23 +35,17 @@ export class Notes extends Component {
     }
 
     render() {
-        console.log("In note")
         return (
             <div>
                 <div className="notesBox">
 
-{/* <UserContext.Provider value={{updateNote:{this.updateNote}}}> */}
                     <TakeANote updateNote={this.updateNote} /> <br></br>
                     <DisplayNote noteArray={this.state.noteArr} updateNote={this.updateNote}/>
-                    {/* <TakeANote value /> <br></br> */}
-                    {/* <DisplayNote noteArray={this.state.noteArr} value /> */}
-                    {/* </UserContext.Provider> */}
-                
+
                 </div>
             </div>
         )
     }
 }
-// useContext
 
 export default Notes

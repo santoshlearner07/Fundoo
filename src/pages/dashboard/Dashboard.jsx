@@ -94,7 +94,6 @@ const AppBar = styled(MuiAppBar, {
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== "open"
 })(({ theme, open }) => ({
-  // width: drawerWidth,
   flexShrink: 10,
   whiteSpace: "nowrap",
   boxSizing: "border-box",
@@ -146,14 +145,12 @@ export default function MiniDrawer() {
 
   const iconClick = (text) => {
     if (text.iText == "Notes") {
-      console.log("This is Notes")
-      history.push("/notes")
-      console.log("This is Notes-end")
+
+      history.push("/")
     }
     else if (text.iText == "Archive") {
-      console.log("This is Archive")
+  
       history.push("/archive")
-      console.log("This is Archive-end")
     }
     else if (text.iText == "Bin") {
       history.push("/trash")
@@ -209,10 +206,8 @@ const searchContent =(e) =>{
       <Drawer variant="permanent" open={open} >
         <DrawerHeader>
         </DrawerHeader>
-        {/* <Divider /> */}
         <List>
 
-          {/* <div className="iconName"> */}
           {iconlist.map((text, index) => (
             <ListItem button key={text.iText} onClick={() => iconClick(text)}>
               <ListItemIcon>
@@ -223,22 +218,20 @@ const searchContent =(e) =>{
               <ListItemText primary={text.iText} />
             </ListItem>
           ))}
-          {/* </div> */}
 
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Typography paragraph>
-          {/* <Archive /> */}
-          <BrowserRouter>
+          
+         
             <Switch>
-              <Route path="/notes" component={Notes} />
-              <Route path="/archive" component={Archive} />
-              <Route path="/trash" component={Trash} />
-              <Notes />
+              <Route exact path="/" component={Notes} />
+              <Route exact path="/archive" component={Archive} />
+              <Route exact path="/trash" component={Trash} />
             </Switch>
-          </BrowserRouter>
+         
 
         </Typography>
       </Box>

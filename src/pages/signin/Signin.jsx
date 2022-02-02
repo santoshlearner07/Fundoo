@@ -45,13 +45,9 @@ export class Signin extends Component {
             console.log("Validation Successfulll!!!")
 
             let data = {
-                // "email": "santoshwalker719@gmail.com",
-                // "password": "santosh@W23"
                     "email" : this.state.email,
                     "password" : this.state.password
             };
-
-            // if(this.state.email && this.state.password){
 
             uService.signin(data)
                 .then(res => {
@@ -66,11 +62,8 @@ export class Signin extends Component {
                 .catch(err => {
                     console.log(err)
                 })
-            // }
         } else console.log("OOPS!!! You missed something")
     }
-
-
 
     render() {
         console.log(this.state)
@@ -109,14 +102,11 @@ export class Signin extends Component {
                         <p className="learnmore">Learn more</p>
                     </div>
                     <div className="create">
-                        <Link to="/"> <p className="c-text" >Create account ?</p> </Link>
+                        <Link to="/register"> <p className="c-text" >Create account ?</p> </Link>
                         <div className="box">
-                        <Link to="/dashboard">  <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
+                        <Link to="/">  <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
                                 Next
                             </Button></Link>
-                            {/* <Button style={{ backgroundColor: 'blue' }} className="bbox" variant="contained" size="small" onClick={this.next}>
-                                Next
-                            </Button> */}
                         </div>
                     </div>
                 </div>

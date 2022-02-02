@@ -59,7 +59,6 @@ export class TakeANote extends Component {
             .then(res => {
                 console.log(res)
             this.props.updateNote();
-            // this.props.changeColor();
                 this.setState({
                     opeNote: true,
                     title: ' ',
@@ -81,7 +80,6 @@ export class TakeANote extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <>
                 <div className="addnote-container">

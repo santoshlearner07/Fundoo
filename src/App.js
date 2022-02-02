@@ -16,21 +16,24 @@ import Trash from './pages/trash/Trash';
 import SignOut from './pages/signOut/SignOut';
 
 function App() {
-  // const [isAuth,login,logout] = useAuth(false)
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/' component={Signup} exact />
+        <Route path='/register' component={Signup} exact />
         <Route path='/signin' component={Signin} />
         <Route path='/forgot' component={Forgot} />
         <Route path='/resetpassword' component={Reset} />
         <Route path='/profile' component={SignOut} />
 
         <Route path="/notes" exact component={Notes} />
-        <Route path="/archive" component={Archive} />
-        <Route path="/trash" component={Trash} />
 
-        <ProtectedRoute Route path='/dashboard' component={Dashboard} />
+        <Route path="/" component={Dashboard} />
+
+        {/* <ProtectedRoute Route path="/" component={Dashboard} /> */}
+
+        <Route exact path="/archive" component={Archive} />
+        <Route exact path="/trash" component={Trash} />
+
         <Route path='*' component={() => "Error 404 Page Not Found"} />
       </Switch>
     </BrowserRouter>

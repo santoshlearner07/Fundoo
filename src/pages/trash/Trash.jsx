@@ -12,7 +12,6 @@ export class Trash extends Component {
     }
 
     componentDidMount() {
-        // this.updateNote();
         this.updateTrashNote();
     }
 
@@ -23,8 +22,7 @@ export class Trash extends Component {
                 this.setState({
                     trashNoteArray: res.data.data.data
                 })
-                console.log("datdatdat out" + this.state.trashNoteArray)
-                console.log(res)
+              
             })
             .catch(err => {
                 console.log(err)
@@ -33,7 +31,7 @@ export class Trash extends Component {
     render() {
         console.log("Trash Note")
         return <div>
-            <DisplayNote noteArr={this.state.trashNoteArray} updateNote={this.updateTrashNote} />
+            <DisplayNote noteArray={this.state.trashNoteArray} updateNote={this.updateTrashNote} />
         </div>;
     }
 }

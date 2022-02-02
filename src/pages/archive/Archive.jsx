@@ -19,23 +19,22 @@ export class Archive extends Component {
     archiveNote=()=>{
         noteService.getArchiveNote()
         .then(res =>{
-            console.log("datdatdat In")
+            console.log("datdatdat In",res)
             this.setState({
                 archiveNoteArray:res.data.data.data
             })
-            console.log("datdatdat out")
-            console.log(res)
+           
         })
         .catch(err =>{
             console.log(err)
         })
     }
     render() {
-        console.log("Archive")
+      
         return (
             <div>
-                Heelo
-                <DisplayNote noteArr={this.state.archiveNoteArray} updateNote={this.archiveNote}/>
+                
+                <DisplayNote noteArray={this.state.archiveNoteArray} updateNote={this.archiveNote}/>
             </div>
         )
     }
